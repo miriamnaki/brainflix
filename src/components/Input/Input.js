@@ -4,7 +4,7 @@ import searchIcon from '../../assets/icons/search.svg';
 function Input() {
   return (
     <div>
-      <input class="search" 
+      <input className="search" 
         type="search"
         name="search"
         placeholder="Search"
