@@ -1,10 +1,11 @@
 import React from 'react';
+import './Input.scss';
 import searchIcon from '../../assets/icons/search.svg';
 
 function Input() {
   return (
-    <div>
-      <input className="search" 
+    <div className="search">
+      <input className="search__input" 
         type="search"
         name="search"
         placeholder="Search"

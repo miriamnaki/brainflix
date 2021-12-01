@@ -1,5 +1,26 @@
+@use '../../styles/partials/colors';
 .button {
-  &__image {
-    background-color: blue;
+  position: relative;
+  &__action {
+    width: 100%;
+    padding: 0;
+    margin: 14px 0px;
+    border-radius: 0.3125rem;
+    border: none;
+    text-transform: uppercase;
+    color: colors.$primary-White;
+    background-color: colors.$primary-BrainFlix-Blue;
+    height: 40px;
+    font-family: 'Avenir';
+    font-weight: 700;
+    font-style: bold;
   }
+
+  &__image {
+    position: absolute;
+    left: 10px;
+    bottom: 25px;
+  }
+
+
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Logo.scss';
 import logo from '../../assets/logo/BrainFlix-logo.svg';
 
 function Logo() {

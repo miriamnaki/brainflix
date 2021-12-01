@@ -1,0 +1,12 @@
+.header {
+  background-color: pink;
+  padding: 16px 16px 0px 16px;
+
+  &__input-avatar {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+
+  }
+  
+}
