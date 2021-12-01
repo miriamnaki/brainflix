@@ -10,10 +10,11 @@ function Header() {
   return (
     <div className="header">
       <Logo/>
-      <div className="header__input-avatar">
+      <div className="header__input-avatar-mobile">
         <Input/>
         <Avatar/>
       </div>
+      
       <Button
         value="upload"
         icon= {uploadIcon}

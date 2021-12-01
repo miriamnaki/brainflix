@@ -1,0 +1,24 @@
+@use './variables';
+@use './colors';
+
+// ********* mobile media queries *********
+@mixin mobile {
+  @media screen and (max-width: variables.$mobile_breakpoint){
+    @content;
+  }
+}
+
+// ********* tablet media queries *********
+@mixin tablet {
+  @media screen and (max-width: variables.$minimim-tablet_breakpoint) and (max-width: variables.$maximim-tablet_breakpoint){
+    @content;
+  }
+}
+
+// ********** desktop media queries ************
+
+@mixin desktop {
+  @media screen and (min-width: variables.$minumum-desktop_breakpoint){
+    @content;
+  }
+}

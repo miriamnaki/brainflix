@@ -1,12 +1,16 @@
+@use '../../styles/partials/variables';
 .header {
   background-color: pink;
   padding: 16px 16px 0px 16px;
 
-  &__input-avatar {
+  &__input-avatar-mobile {
     display: flex;
     justify-content: space-between;
     max-width: 100%;
 
   }
+  
+
+  
   
 }
