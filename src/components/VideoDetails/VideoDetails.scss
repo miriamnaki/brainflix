@@ -1,0 +1,103 @@
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
+
+.video {
+  font-family: "Avenir";
+  
+  
+  &__container {
+    background-color: colors.$secondary-BrainFlix-DarkBlack;
+    padding: 0;
+    
+  }
+  
+  &__details-container {
+    padding: 14px 16px 14px 16px;
+  }
+  &__player {
+    width: 100%; 
+    aspect-ratio: 16 /9;
+    object-fit: cover;
+    height: 150px;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    
+    padding-bottom: 8px;
+  }
+
+  &__divider {
+    height: 1px;
+    border: none;
+    width: 100%;
+    background: colors.$secondary-Mercury;
+    margin-bottom: 16px;
+   
+  }
+  &__channel-time-wrapper { 
+    padding-right: 25%;
+    
+  }
+
+  &__channel {
+    font-size: 13px;
+    font-weight: 700;
+    font-style: bold;
+    padding-bottom: 10px;
+  }
+  &__tags {
+    font-size: 12px;
+    color: colors.$primary-Silver;
+    font-style: bold;
+    font-weight: 700;
+  }
+
+  &__info-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__icon {
+    border: none;
+    background-color: colors.$primary-White;
+    padding-right: 10px;
+    height: 10px;
+  }
+  &__icon > img {
+    height: 15px;
+  }
+
+  &__test {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+  }
+
+  &__description {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    font-style: normal;
+    padding-bottom: 16px;
+  }
+
+  &__comment-number{
+    font-size: 12px;
+    font-weight: 700;
+    font-style: bold;
+    padding-bottom: 16px;
+  }
+
+  
+  
+
+  
+
+ 
+
+
+  
+}
