@@ -10,7 +10,7 @@
 
 // ********* tablet media queries *********
 @mixin tablet {
-  @media screen and (max-width: variables.$minimim-tablet_breakpoint) and (max-width: variables.$maximim-tablet_breakpoint){
+  @media screen and (min-width: variables.$minimim-tablet_breakpoint) and (max-width: variables.$maximim-tablet_breakpoint){                      
     @content;
   }
 }

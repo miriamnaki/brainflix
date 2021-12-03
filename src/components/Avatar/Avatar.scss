@@ -1,3 +1,4 @@
+@use '../../styles/partials/mixins';
 .avatar {
   
   &__image {
@@ -5,5 +6,17 @@
     height: 2.1875rem;
     border-radius: 50%;
     object-fit: cover;
+
+    @include mixins.tablet {
+      width: 40px;
+      height: 40px;
+    }
+    @include mixins.desktop {
+      width: 40px;
+      height: 40px;
+    }
+
+    
   }
+
 }

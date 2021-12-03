@@ -1,16 +1,117 @@
-@use '../../styles/partials/variables';
+@use '../../styles/partials/mixins';
 .header {
-  background-color: pink;
-  padding: 16px 16px 0px 16px;
+  
+  padding: 14px 16px 14px 16px;
+  display: flex;
+  flex-direction: column;
 
-  &__input-avatar-mobile {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
-
+  @include mixins.tablet {
+    padding: 16px 36px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
   }
   
-
+  @include mixins.desktop {
+    margin: auto;
+    width: 80%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
   
+  &__logo {
+    align-self: center;
+    padding-bottom: 13px;
+
+    @include mixins.tablet {
+      margin-right: auto;
+      padding-bottom: 0;
+      width: 100px;
+    }
+    
+    @include mixins.desktop {
+      margin-right: auto;
+      padding-bottom: 0;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-right: 16px;
+
+    @include mixins.tablet {
+      padding-right: 24px;
+    }
+
+    @include mixins.desktop {
+      padding-right: 24px;
+    }
+  }
+
+  &__input-avatar-container{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+
+    @include mixins.tablet {
+      width: 35%;
+      padding: 0;
+    }
+
+    @include mixins.desktop {
+      width: 35%;
+      padding: 0;
+    }
+  }
+
+  &__avatar {
+
+    @include mixins.tablet {
+      display: none;
+    }
+
+    @include mixins.desktop {
+      display: none;
+    }
+  }
+  &__avatar-tablet {
+    display: none;
+
+    @include mixins.tablet {
+      display: inline;
+    }
+
+    @include mixins.desktop {
+      padding-right: 16px;
+      display: inline;
+    }
+  }
+
+  &__button {
+
+    @include mixins.tablet {
+      width: 22%;
+      padding-right: 16px;   
+    }
+
+    @include mixins.desktop {
+      width: 14%;
+      padding-right: 36px;
+    }
+  }
+
+  &__input {
+
+    @include mixins.tablet {
+      width: 100%;
+    }
+
+    @include mixins.desktop {
+      width: 65%;
+      padding-left: 100px;
+      padding-right: 0;
+    }
+  }
   
 }

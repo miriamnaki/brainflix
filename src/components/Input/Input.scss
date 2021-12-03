@@ -1,4 +1,5 @@
 @use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
 .search {
   position: relative;
   &__input {
@@ -10,12 +11,20 @@
     padding: 10px 0px 10px 35px;
     background-color: rgba(246, 246, 246, 0.7);
     height: 36px;
-    padding-right: 50px;
+    font-size: 12px;
+    
+    @include mixins.tablet {
+      height: 40px;
+    }
+    @include mixins.desktop {
+      height: 40px;
+    }
 
   }
 
   &::placeholder {
     margin-left: 40px;
+    font-size: 40px;
   }
 
   &__icon {
