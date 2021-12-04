@@ -4,24 +4,24 @@
   &__action {
     width: 100%;
     padding: 0;
-    // margin: 14px 0px;
     border-radius: 0.3125rem;
     border: none;
     text-transform: uppercase;
     color: colors.$primary-White;
     background-color: colors.$primary-BrainFlix-Blue;
-    height: 40px;
+    height: 34px;
     font-family: 'Avenir';
     font-weight: 700;
     font-style: bold;
+    font-size: 11px;
   }
 
   &__image {
     position: absolute;
     left: 10px;
-    bottom: 10px;
-    width: 20px;
-    height: 20px;
+    bottom: 8px;
+    width: 17px;
+    height: 18px;
   }
 
 

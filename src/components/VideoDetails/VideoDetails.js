@@ -2,6 +2,7 @@ import React from 'react';
 import './VideoDetails.scss';
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
+import Form from '../Form/Form';
 
 const VideoDetails = (props) =>  {
   const {video, title, image, channel, timestamp,views,likes,description,comments} = props.selectedVideo
@@ -57,6 +58,13 @@ const VideoDetails = (props) =>  {
         <div>
           <p className="video__comment-number">{arr} Comments</p>
         </div>
+
+        <Form
+          label= "join the converstion"
+          placeholder="Add a new comment"
+          src="placeholder"
+          alt= 'avatar'
+        />
 
       </div>
       
