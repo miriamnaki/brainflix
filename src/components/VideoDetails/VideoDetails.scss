@@ -179,6 +179,11 @@
 
   &__comments {
     padding: 16px 0px 16px 0px;
+    
+    @include mixins.tablet {
+      padding: 24px 0px 24px 0px;
+      
+    }
   }
 
   // video comments avatar
@@ -188,6 +193,11 @@
     border-radius: 50%;
     background-color: colors.$secondary-Mercury;
     border: none;
+
+    @include mixins.tablet {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   // avatar, name , date container
@@ -205,16 +215,22 @@
 
   // commenter's name
   &__comments-name {
-    padding-left: 1rem;  
+    padding-left: 16px;
   }
 
   // comment description
   &__comments-description {
-    padding-left: 3.125rem;
+    padding-left: 50px;
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
     font-style: normal;
+
+    @include mixins.tablet {
+      padding-left: 55px;
+      font-size: 14px;
+      line-height: 22px;
+    }
   }
   
 }

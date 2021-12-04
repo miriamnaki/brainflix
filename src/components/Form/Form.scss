@@ -34,6 +34,9 @@
 
   &__avatar {
     padding-top: 20px;
+    @include mixins.tablet {
+      padding-right: 5px;
+    }
   }
   &__label {
     font-weight: 700;
@@ -93,13 +96,11 @@
     padding-bottom: 16px;
 
     @include mixins.tablet {
-      padding: 0;
-      
+     padding-left: 0px;
+     
     }
   }
-  &__button > img {
-    height: 10px;
-  }
+  
 
   
 }
