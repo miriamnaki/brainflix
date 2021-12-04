@@ -22,7 +22,7 @@
   
   &__logo {
     align-self: center;
-    padding-bottom: 13px;
+    padding-bottom: 14px;
 
     @include mixins.tablet {
       margin-right: auto;
@@ -52,7 +52,7 @@
   &__input-avatar-container{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 12px;
+    padding-bottom: 14px;
 
     @include mixins.tablet {
       width: 35%;
