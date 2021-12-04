@@ -14,8 +14,10 @@
     height: 36px;
     font-size: 12px;
     
+    
     @include mixins.tablet {
       height: 40px;
+      width: 240px;
     }
     @include mixins.desktop {
       height: 40px;
