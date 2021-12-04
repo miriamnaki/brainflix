@@ -3,14 +3,32 @@
 @use '../../styles/partials/typography';
 .form {
   color: colors.$primary-BrainFlix-Black;
+
+  &__container {
+    max-width: 100%;
+    @include mixins.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+  }
   &__avatar {
     width: 2.1875rem;
     height: 2.1875rem;
     border-radius: 50%;
     object-fit: cover;
   }
+
+
   &__wrapper {
     display: flex; 
+
+    @include mixins.tablet {
+      flex-basis: 100px;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
     
   }
 
@@ -44,7 +62,15 @@
       font-weight: 400;
       width: 100%;
       font-size: 12px;
-      color: colors.$primary-BrainFlix-Black;     
+      color: colors.$primary-BrainFlix-Black; 
+      
+      @include mixins.tablet {
+        font-size: 14px;
+      }
+    }
+
+    @include mixins.tablet {
+      height: 40px;
     }
     
   }
@@ -52,11 +78,24 @@
     padding-left: 16px;
     padding-bottom: 8px;
     width: 100%;
+
+    @include mixins.tablet {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-bottom: 24px;
+      
+      
+    }
   }
 
   &__button {
     padding-left: 3.125rem;
     padding-bottom: 16px;
+
+    @include mixins.tablet {
+      padding: 0;
+      
+    }
   }
   &__button > img {
     height: 10px;
