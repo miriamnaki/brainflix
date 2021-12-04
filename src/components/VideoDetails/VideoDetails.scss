@@ -34,7 +34,7 @@
     border: none;
     width: 100%;
     background: colors.$secondary-Mercury;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
    
   }
   &__channel-time-wrapper { 
@@ -78,10 +78,10 @@
 
   &__description {
     font-size: 12px;
-    line-height: 18px;
+    line-height: 16px;
     font-weight: 400;
     font-style: normal;
-    padding-bottom: 16px;
+    padding-bottom: 8px;
   }
 
   &__comment-number{
@@ -89,6 +89,29 @@
     font-weight: 700;
     font-style: bold;
     padding-bottom: 16px;
+  }
+
+  &__comments-avatar {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    border-radius: 50%;
+    background-color: colors.$secondary-Mercury;
+    border: none;
+  }
+  &__comments-avatar-name-date-container{
+    display: flex;
+    justify-content: space-between;
+    height: 24px;
+
+  }
+  &__comments-avatar-name-container {
+    display: flex;
+  }
+  &__comments-name {
+    padding-left: 1rem;  
+  }
+  &__comments-description {
+    padding-left: 3.125rem;
   }
 
   

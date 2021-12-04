@@ -8,7 +8,13 @@ const VideoDetails = (props) =>  {
   const {video, title, image, channel, timestamp,views,likes,description,comments} = props.selectedVideo
   let arr = comments.length
   let postedTimestamp  = new Date(timestamp);
-  let currentDate = postedTimestamp.toLocaleDateString();
+  let currentDate = postedTimestamp.toLocaleDateString(
+    'default',{
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit'
+    }
+  );
 
    
   console.log(arr)
@@ -54,7 +60,7 @@ const VideoDetails = (props) =>  {
 
         <hr className="video__divider"></hr>
           <p className="video__description">{description}</p>
-      <div>
+      
         <div>
           <p className="video__comment-number">{arr} Comments</p>
         </div>
@@ -66,26 +72,33 @@ const VideoDetails = (props) =>  {
           alt= 'avatar'
         />
 
-      </div>
+        <hr className= "video__divider"></hr>
       
         {console.log(comments)}
         {comments.map((comment) => {
-          <p>{comments.length}</p>
-          
-           return (
-             
-             <div>
+          let postedTimestamp  = new Date(comment.timestamp);
+          let currentDate = postedTimestamp.toLocaleDateString('default',{
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          });
+          <p>{comments.length}</p>   
+           return (     
+             <div className="video__comments">
+               <div className="video__comments-avatar-name-date-container">
+                 <div className="video__comments-avatar-name-container">
+                  <div className="video__comments-avatar"></div>
+                  <p className="video__comments-name video__channel">{comment.name}</p>
+                 </div>
+                 
+                  <p className="video__comments-time video__tags">{currentDate}</p>
+               </div>
 
-               <img src="" alt="placeholder" />
-               <p>{comment.name}</p>
-               <p>{comment.timestamp}</p>
-               <p>{comment.comment}</p>
-
+               <p className="video__comments-description video__description">{comment.comment}</p>
+               <hr className="video__divider"></hr>
              </div>
-           )
-           
-        })}
-     
+           )         
+        })}    
      </div>
     </div>
   );
