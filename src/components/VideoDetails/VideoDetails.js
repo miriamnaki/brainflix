@@ -42,13 +42,13 @@ const VideoDetails = (props) =>  {
           </div>
 
           <div className="video__views-likes-wrapper">
-            <div className="video__test">
+            <div className="video__number-icon">
               <button className="video__views-button video__icon"><img src={viewsIcon} alt="viewsIcon" /></button>
 
               <p className="video__views-count video__tags">{views}</p>
             </div>
 
-            <div className="video__test">
+            <div className="video__number-icon video__number-icon--likes">
               <button className="video__likes-button video__icon"><img src={likesIcon} alt="viewsIcon" /></button>
               <p className="video__likes-count video__tags">{likes}</p>
 
@@ -83,7 +83,8 @@ const VideoDetails = (props) =>  {
             day: '2-digit'
           });
           <p>{comments.length}</p>   
-           return (     
+           return ( 
+             <>    
              <div className="video__comments">
                <div className="video__comments-avatar-name-date-container">
                  <div className="video__comments-avatar-name-container">
@@ -94,9 +95,10 @@ const VideoDetails = (props) =>  {
                   <p className="video__comments-time video__tags">{currentDate}</p>
                </div>
 
-               <p className="video__comments-description video__description">{comment.comment}</p>
-               <hr className="video__divider"></hr>
+               <p className="video__comments-description">{comment.comment}</p>
              </div>
+               <hr className="video__divider"></hr>
+             </>
            )         
         })}    
      </div>

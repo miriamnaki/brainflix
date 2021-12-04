@@ -28,7 +28,7 @@ function Form({label, placeholder, name}) {
                 name={name} 
                 id={name}
                 cols="40" 
-                rows="6.5"
+                rows="6"
                 required
                 placeholder={placeholder}></textarea>
             </div>
