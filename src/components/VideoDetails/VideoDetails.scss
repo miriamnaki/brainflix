@@ -7,6 +7,10 @@
   // video details container
   &__details-container {
     padding: 14px 16px 14px 16px;
+
+    @include mixins.tablet {
+      padding: 24px 36px;
+    }
   }
 
 
@@ -32,6 +36,11 @@
     font-weight: 700;
     margin: 0;   
     padding-bottom: 16px;
+
+    @include mixins.tablet {
+      font-size: 33px;
+      padding-bottom: 16px;
+    }
   }
 
   // video divider
@@ -40,13 +49,31 @@
     border: none;
     width: 100%;
     background: colors.$secondary-Mercury;
-    // margin-bottom: 8px;  
+
+    &--tablet-desktop {
+      @include mixins.tablet {
+        display:none
+      }
+    }
   }
 
   // timestamp and channel wrapper
   &__channel-time-wrapper { 
     padding-right: 25%;
+
+    @include mixins.tablet {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 0px;
+    }
     
+  }
+
+  &__views-likes-wrapper {
+    @include mixins.tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
 
@@ -56,6 +83,12 @@
     font-weight: 700;
     font-style: bold;
     padding-bottom: 16px;
+
+    @include mixins.tablet {
+      padding-bottom: 0px;
+      padding-right: 40px;
+      font-size: 14px;
+    }
   }
 
   // elements with similar styling
@@ -65,6 +98,10 @@
     color: colors.$primary-Silver;
     font-style: normal;
     font-weight: 400;
+
+    @include mixins.tablet {
+      font-size: 14px;
+    }
   }
 
   //likes and views & corresponding icons wrapper
@@ -72,13 +109,18 @@
     display: flex;
     justify-content: flex-start;
     padding: 16px 0px 16px 0px;
+
+    @include mixins.tablet {
+      justify-content: space-between;
+      padding: 0px 0px 8px 0px;
+    }
   }
 
   // icons
   &__icon {
     border: none;
     background-color: colors.$primary-White;
-    padding-right: 10px;
+    padding-right: 8px;
     height: 10px;
   }
   &__icon > img {
@@ -91,8 +133,17 @@
     flex-direction: row;
     padding-bottom: 16px;
 
+    @include mixins.tablet {
+      padding-bottom: 0;
+      
+    }
+
     &--likes {
       padding-bottom: 0;
+
+      @include mixins.tablet {
+        padding-left: 40px;
+      }
     }
   }
 
@@ -103,6 +154,12 @@
     font-weight: 400;
     font-style: normal;
     padding: 16px 0px 16px 0px;
+
+    @include mixins.tablet {
+      font-size: 14px;
+      line-height: 22px;
+      padding: 24px 0px 24px 0px;
+    }
   }
 
 
@@ -114,6 +171,10 @@
     font-weight: 700;
     font-style: bold;
     padding-bottom: 24px;
+
+    @include mixins.tablet {
+      padding-top: 8px;
+    }
   }
 
   &__comments {

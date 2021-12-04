@@ -31,7 +31,7 @@ const VideoDetails = (props) =>  {
         <div className="video__details-container">
           <h2 className="video__title">{title}</h2>
 
-          <hr className="video__divider"></hr>
+          <hr className="video__divider video__divider--tablet-desktop"></hr>
 
         <div className="video__info-wrapper">
           <div className="video__channel-time-wrapper">
