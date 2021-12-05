@@ -10,9 +10,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+    }
+    @include mixins.desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
+
   &__avatar {
     width: 2.1875rem;
     height: 2.1875rem;
@@ -29,12 +34,20 @@
       flex-grow: 1;
       flex-shrink: 0;
     }
+    @include mixins.desktop {
+      flex-basis: 100px;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
     
   }
 
   &__avatar {
     padding-top: 20px;
     @include mixins.tablet {
+      padding-right: 5px;
+    }
+    @include mixins.desktop {
       padding-right: 5px;
     }
   }
@@ -70,9 +83,15 @@
       @include mixins.tablet {
         font-size: 14px;
       }
+      @include mixins.desktop {
+        font-size: 14px;
+      }
     }
 
     @include mixins.tablet {
+      height: 40px;
+    }
+    @include mixins.desktop {
       height: 40px;
     }
     
@@ -85,9 +104,12 @@
     @include mixins.tablet {
       padding-left: 24px;
       padding-right: 24px;
-      padding-bottom: 24px;
-      
-      
+      padding-bottom: 24px;     
+    }
+    @include mixins.desktop {
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-bottom: 24px;     
     }
   }
 
@@ -96,8 +118,10 @@
     padding-bottom: 16px;
 
     @include mixins.tablet {
-     padding-left: 0px;
-     
+     padding-left: 0px;   
+    }
+    @include mixins.desktop {
+     padding-left: 0px;   
     }
   }
   

@@ -9,9 +9,9 @@ function Form({label, placeholder, name}) {
   return (
     <div className="form">
      
-      <form class="form__container">
-        <div class="form__wrapper"> 
-            <div class="form__avatar"> 
+      <form className="form__container">
+        <div className="form__wrapper"> 
+            <div className="form__avatar"> 
             <Avatar
             src ={avatar}
             alt="avatar"
@@ -19,11 +19,11 @@ function Form({label, placeholder, name}) {
             </div>
           
               
-            <div class="form__text-area">
-            <label class="form__label" for="description">{label}</label>
+            <div className="form__text-area">
+            <label className="form__label" htmlFor="description">{label}</label>
 
               <textarea 
-                class="form__description"
+                className="form__description"
                 type="text"
                 name={name} 
                 id={name}
