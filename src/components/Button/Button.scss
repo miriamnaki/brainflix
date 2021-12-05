@@ -19,6 +19,9 @@
     @include mixins.tablet {
       width: 150px;
     }
+    @include mixins.desktop {
+      width: 150px;
+    }
   }
 
   &__image {

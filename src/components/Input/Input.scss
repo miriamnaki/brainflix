@@ -21,13 +21,13 @@
     }
     @include mixins.desktop {
       height: 40px;
+      width: 240px;
     }
 
   }
 
   &::placeholder {
     color: colors.$primary-BrainFlix-Black;
-
     margin-left: 40px;
     font-size: 40px;
   }
