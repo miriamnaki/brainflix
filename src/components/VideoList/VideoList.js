@@ -1,4 +1,5 @@
 import React from 'react';
+import './VideoList.scss';
 
 
 function VideoList(props) {
@@ -13,7 +14,7 @@ function VideoList(props) {
           <div className="video-list__container">
 
             <div className="video-list__image-wrapper">
-              <img src={video.image} alt="image" />
+              <img className="video-list__image" src={video.image} alt="image" />
             </div>
 
             <div className="video-list__title-channel-wrapper">

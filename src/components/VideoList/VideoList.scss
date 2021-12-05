@@ -1,0 +1,51 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+@use '../../styles/partials/typography';
+.video-list {
+  font-family: "Avenir";
+  padding: 0px 16px 14px 16px;
+
+  &__header {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: colors.$primary-Silver;
+    font-weight: 700;
+    font-style: bold;
+    padding-bottom: 16px;
+  }
+  &__image-wrapper {
+    width: 100px;
+    height: 60px;
+    margin-right: 16px;
+    background-color: colors.$secondary-Mercury;
+  }
+
+  &__image {
+    width: 100px;
+    height: 60px;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    
+  }
+
+  &__container {
+    display: flex;
+    padding-bottom: 12px;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 700;
+    font-style: bold;
+  }
+  &__channel {
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
+}
