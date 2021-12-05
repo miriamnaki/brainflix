@@ -15,13 +15,31 @@ console.log(videoDetails)
       selectedVideo: videoDetails[0],
       videoList: videos
    }
+   
+
+   nextVideoHandler = (id) => {
+     console.log('This is a', id)
+     this.setState({
+       selectedVideo: videoDetails.find(video => video.id === id)
+      })
+   }
 
   render(){
+    // console.log(this.state.selectedVideo)
+
+    const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
+    console.log(videos.id)
+
     return (
       <>
       <Header/>
-      <VideoDetails selectedVideo = {this.state.selectedVideo}/>
-      <VideoList videoList={this.state.videoList}/>
+      <VideoDetails
+        selectedVideo = {this.state.selectedVideo}
+       />
+      <VideoList 
+        videoList={filteredVideos}
+        onVideoSelect={this.nextVideoHandler}
+        />
       </>
      
     );

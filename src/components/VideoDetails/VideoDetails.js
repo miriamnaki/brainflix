@@ -5,8 +5,10 @@ import likesIcon from '../../assets/icons/likes.svg'
 import Form from '../Form/Form';
 
 const VideoDetails = (props) =>  {
-  const {video, title, image, channel, timestamp,views,likes,description,comments} = props.selectedVideo
-  let arr = comments.length
+  console.log('video detail props',props)
+  const {video, title, image, channel, timestamp,views,likes,description,comments} = props.selectedVideo;
+  // let arr = comments.length
+  console.log(comments)
   let postedTimestamp  = new Date(timestamp);
   let currentDate = postedTimestamp.toLocaleDateString(
     'default',{
@@ -17,8 +19,8 @@ const VideoDetails = (props) =>  {
   );
 
    
-  console.log(arr)
-  console.log(comments)
+  // console.log(arr)
+  // console.log(comments)
   console.log(video)
   return (
     <div className="video">
@@ -62,7 +64,7 @@ const VideoDetails = (props) =>  {
           <p className="video__description">{description}</p>
       
         <div>
-          <p className="video__comment-number">{arr} Comments</p>
+          {/* <p className="video__comment-number">{arr} Comments</p> */}
         </div>
 
         <Form
