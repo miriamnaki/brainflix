@@ -5,6 +5,10 @@
   font-family: "Avenir";
   padding: 0px 16px 14px 16px;
 
+  @include mixins.tablet {
+    padding: 0px 36px 24px 36px;
+  }
+
   &__header {
     text-transform: uppercase;
     font-size: 12px;
