@@ -24,11 +24,11 @@ const VideoDetails = (props) =>  {
   console.log(video)
   return (
     <div className="video">
-      <div className= "video__container">
+      {/* <div className= "video__container">
         <video className="video__player" controls poster={image}>
           <source src={video}></source>
         </video>
-      </div>
+      </div> */}
 
         <div className="video__details-container">
           <h2 className="video__title">{title}</h2>

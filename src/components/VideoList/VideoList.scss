@@ -5,9 +5,18 @@
   font-family: "Avenir";
   padding: 0px 16px 14px 16px;
 
+  @include mixins.desktop {
+    padding-top: 36px;
+  }
+
+
   @include mixins.tablet {
     padding: 0px 36px 24px 36px;
   }
+  // @include mixins.desktop {
+  //   width: 600px;
+  //   margin-left: auto;
+  // }
 
   &__header {
     text-transform: uppercase;
@@ -19,6 +28,9 @@
 
     @include mixins.tablet {
       padding-bottom: 30px;
+    }
+    @include mixins.desktop {
+      // padding-top: 70px;
     }
   }
   &__image-wrapper {
@@ -68,6 +80,9 @@
     @include mixins.tablet {
       font-size: 14px;
     }
+    @include mixins.desktop {
+      font-size: 14px;
+    }
   }
   &__channel {
     font-size: 13px;
@@ -75,6 +90,9 @@
     font-style: normal;
     
     @include mixins.tablet {
+      font-size: 14px;
+    }
+    @include mixins.desktop {
       font-size: 14px;
     }
     

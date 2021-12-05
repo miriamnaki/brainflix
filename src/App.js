@@ -1,8 +1,9 @@
 import './styles/partials/_globals.scss';
 import { Component } from 'react';
-import './App.css';
+import './App.scss';
 import Header from './components/Header/Header';
 import VideoDetails from './components/VideoDetails/VideoDetails';
+import VideoSelected from './components/VideoSelected/VideoSelected';
 import VideoList from './components/VideoList/VideoList';
 import videoDetails from './data/video-details.json';
 import videos from './data/videos.json';
@@ -33,13 +34,24 @@ console.log(videoDetails)
     return (
       <>
       <Header/>
-      <VideoDetails
-        selectedVideo = {this.state.selectedVideo}
-       />
-      <VideoList 
-        videoList={filteredVideos}
-        onVideoSelect={this.nextVideoHandler}
-        />
+      <VideoSelected selectedVideo = {this.state.selectedVideo}/>
+      <div className="app">
+        <div className="app__video-details">
+          <VideoDetails
+            selectedVideo = {this.state.selectedVideo}
+          />
+        </div>
+        <hr className="app__vertical"></hr>
+
+
+        <div className="app__video-list">
+          <VideoList 
+            videoList={filteredVideos}
+            onVideoSelect={this.nextVideoHandler}
+            />
+        </div>
+
+      </div>
       </>
      
     );
