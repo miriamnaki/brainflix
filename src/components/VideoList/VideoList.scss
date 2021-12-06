@@ -3,100 +3,96 @@
 @use '../../styles/partials/typography';
 .video-list {
   font-family: "Avenir";
-  padding: 0px 16px 14px 16px;
-
-  @include mixins.desktop {
-    padding-top: 36px;
-  }
-
+  padding: 0rem 1rem 0.875rem 1rem;
 
   @include mixins.tablet {
-    padding: 0px 36px 24px 36px;
+    padding: 0rem 2.25rem 1.5rem 2.25rem;
   }
-  // @include mixins.desktop {
-  //   width: 600px;
-  //   margin-left: auto;
-  // }
 
+  @include mixins.desktop {
+    padding-top: 2.25rem;
+  }
+
+  // header-title
   &__header {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 0.75rem;
     color: colors.$primary-Silver;
     font-weight: 700;
     font-style: bold;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include mixins.tablet {
-      padding-bottom: 30px;
-    }
-    @include mixins.desktop {
-      // padding-top: 70px;
+      padding-bottom: 1.875rem;
     }
   }
+  
+  // video image wrapper
   &__image-wrapper {
-    width: 100px;
-    height: 60px;
-    margin-right: 16px;
+    width: 6.25rem;
+    height: 3.75rem;
+    margin-right: 1rem;
     background-color: colors.$secondary-Mercury;
 
     @include mixins.tablet {
-      width: 100px;
-      height: 65px;
+      width: 6.25rem;
+      height: 4.0625rem;
     }
   }
 
+  // video image
   &__image {
-    width: 100px;
-    height: 60px;
+    width: 6.25rem;
+    height: 3.75rem;
     background-position: center;
     object-fit: cover;
     background-size: cover;
-    border-radius: 4px;
-    margin-bottom: 8px;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
 
     @include mixins.tablet {
-      width: 100px;
-      height: 65px;
-    }
-    
+      width: 6.25rem;
+      height: 4.0625rem;
+    }  
   }
 
+  // video information container
   &__container {
     display: flex;
-    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
 
     @include mixins.tablet {
-     padding-bottom: 24px;
+     padding-bottom: 1.5rem;
      max-width: 39%;
     }
   }
 
+  // video title
   &__title {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     font-style: bold;
-    padding-bottom: 8px;
+    padding-bottom: 0.5rem;
 
     @include mixins.tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     @include mixins.desktop {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
+
+  // video channel
   &__channel {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 400;
     font-style: normal;
     
     @include mixins.tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     @include mixins.desktop {
-      font-size: 14px;
-    }
-    
-  }
-
-  
+      font-size: 0.875rem;
+    }  
+  } 
 }

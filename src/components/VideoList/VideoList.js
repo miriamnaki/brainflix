@@ -3,7 +3,6 @@ import './VideoList.scss';
 
 
 const  VideoList = (props) => {
-  console.log('these are props', props)
 
   return (
     <div className="video-list">
@@ -13,17 +12,13 @@ const  VideoList = (props) => {
         return (
           <>
           <div className="video-list__container">
-
-            <div className="video-list__image-wrapper"
-            
-            >
+            <div className="video-list__image-wrapper">
               <img 
                 className="video-list__image" 
                 src={video.image} 
                 alt="image" 
                 key={video.id}
-                onClick={() => props.onVideoSelect(video.id)}
-                
+                onClick={() => props.onVideoSelect(video.id)}            
                 />
             </div>
 
@@ -32,11 +27,9 @@ const  VideoList = (props) => {
               <p className="video-list__channel">{video.channel}</p>
             </div>
           </div>
-          </>
-          
+          </>    
           )
-      })}
-      
+      })}    
     </div>
   );
 }
