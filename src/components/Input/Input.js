@@ -10,8 +10,7 @@ function Input() {
         name="search"
         placeholder="Search"
       />
-      <img className="search__icon" src={searchIcon} alt="searchIcon" />
-      
+      <img className="search__icon" src={searchIcon} alt="searchIcon" />  
     </div>
   );
 }
