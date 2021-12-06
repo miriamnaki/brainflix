@@ -9,43 +9,36 @@ import uploadIcon from '../../assets/icons/upload.svg';
 function Header() {
   return (
     <div className="header">
-
-
+      {/* Logo component */}
         <div className="header__logo">
           <Logo/>
         </div>
-  
 
+        {/* Input component */}
         <div className="header__input-avatar-container">
-        <div className="header__input">
-          <Input />
+          <div className="header__input">
+            <Input />
+          </div>
+
+          {/* Avatar component */}
+          <div className="header__avatar">
+            <Avatar/>
+          </div>
         </div>
 
-        <div className="header__avatar">
-          <Avatar/>
-        </div>
-
-        </div>
-
-        
-       
-
+        {/* Button component */}
         <div className="header__button">
-        <Button
-          value="upload"
-          icon= {uploadIcon}
-          alt ='uploadIcon'
+          <Button
+            value="upload"
+            icon= {uploadIcon}
+            alt ='uploadIcon'
           />
         </div>
-      
+
+        {/* tablet and desktop Avatar component */}
         <div className="header__avatar-tablet">
           <Avatar/>
-        </div>
-         
-
-      
-      
-      
+        </div>  
     </div>
   );
 }

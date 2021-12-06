@@ -1,12 +1,12 @@
 @use '../../styles/partials/mixins';
 .header {
 
-  padding: 14px 16px 14px 16px;
+  padding: 0.875rem 1rem;
   display: flex;
   flex-direction: column;
 
   @include mixins.tablet {
-    padding: 16px 36px;
+    padding: 1rem 2.25rem;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
@@ -20,40 +20,43 @@
     align-items: center;
   }
   
+  // header logo
   &__logo {
     align-self: center;
-    padding-bottom: 14px;
+    padding-bottom: 0.875rem;
 
     @include mixins.tablet {
       margin-right: auto;
       padding-bottom: 0;
-      width: 120px;
+      width: 7.5rem;
     }
     
     @include mixins.desktop {
       margin-right: auto;
       padding-bottom: 0;
-      width: 120px;
+      width: 7.5rem;
     }
   }
 
+  // header input
   &__input {
     width: 100%;
-    padding-right: 16px;
+    padding-right: 1rem;
 
     @include mixins.tablet {
-      padding-right: 0px;
+      padding-right: 0rem;
     }
     
     @include mixins.desktop {
-       padding-right: 0px;
+       padding-right: 0rem;
     }
   }
 
+  // header input and avatar container
   &__input-avatar-container{
     display: flex;
     justify-content: space-between;
-    padding-bottom: 14px;
+    padding-bottom: 0.875rem;
 
     @include mixins.tablet {
       padding: 0;
@@ -64,8 +67,8 @@
     }
   }
 
+  // header avatar
   &__avatar {
-
     @include mixins.tablet {
       display: none;
     }
@@ -74,6 +77,8 @@
       display: none;
     }
   }
+
+  // header avatar for desktop and tablet
   &__avatar-tablet {
     display: none;
 
@@ -86,30 +91,16 @@
     }
   }
 
+  // header button
   &__button {
-
     @include mixins.tablet {
-      padding-left: 32px; 
-      padding-right: 32px; 
+      padding-left: 2rem; 
+      padding-right: 2rem; 
     }
 
-    @include mixins.desktop {
-      padding-left: 32px; 
-      padding-right: 32px; 
+    @include mixins.desktop {  
+      padding-left: 2rem; 
+      padding-right: 2rem; 
     }
-  }
-
-  &__input {
-
-    @include mixins.tablet {
-      width: 100%;
-    }
-
-    @include mixins.desktop {
-      // width: 65%;
-      // padding-left: 100px;
-      padding-right: 0;
-    }
-  }
-  
+  } 
 }
