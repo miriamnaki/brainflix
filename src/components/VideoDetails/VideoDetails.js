@@ -78,6 +78,7 @@ const VideoDetails = (props) =>  {
         />
 
         <hr className= "video__divider"></hr> 
+        
           {/* video comments */}
         {comments.map((comment, index) => {
           <p>{comments.length}</p>   
