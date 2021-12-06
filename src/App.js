@@ -33,18 +33,29 @@ import videos from './data/videos.json';
       <VideoSelected selectedVideo = {this.state.selectedVideo}/>
       <div className="app">
         <div className="app__video-details">
-          <VideoDetails  
-            selectedVideo = {this.state.selectedVideo}
-          />
+          {/* need to review this, it breaks my application */}
+          {/* {videoDetails.map((video)=> {
+             <VideoDetails 
+             key={video.comments.timestamp} 
+             selectedVideo = {this.state.selectedVideo}
+           />
+          })} */}
+           <VideoDetails  
+             selectedVideo = {this.state.selectedVideo}
+           />
         </div>
 
         <hr className="app__vertical-divider"></hr>
 
         <div className="app__video-list">
-          <VideoList
-            videoList={filteredVideos}
-            onVideoSelect={this.nextVideoHandler}
-            />
+          {/* need to review this, it breaks my application */}
+            
+            <VideoList  
+              videoList={filteredVideos}
+              onVideoSelect={this.nextVideoHandler}
+              />
+
+         
         </div>
       </div>
       </>    

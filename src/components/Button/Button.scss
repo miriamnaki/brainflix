@@ -14,9 +14,7 @@
     color: colors.$primary-White;
     background-color: colors.$primary-BrainFlix-Blue;
     height: 2.5rem;
-    font-family: 'Avenir';
-    font-weight: 700;
-    font-style: bold;
+    @include mixins.bold;
     font-size: 0.75rem;
 
     @include mixins.tablet {

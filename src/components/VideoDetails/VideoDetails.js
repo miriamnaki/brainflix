@@ -79,11 +79,11 @@ const VideoDetails = (props) =>  {
 
         <hr className= "video__divider"></hr> 
           {/* video comments */}
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           <p>{comments.length}</p>   
            return ( 
              <>    
-             <div  key={comment.timestamp} className="video__comments">
+             <div key={timestamp} className="video__comments">
                <div className="video__comments-avatar-name-date-container">
                  <div className="video__comments-avatar-name-container">
                    {/* comments placeholder avatar */}

@@ -7,9 +7,7 @@
   // input field
   &__input {
     color: colors.$primary-BrainFlix-Black;
-    font-family: 'Avenir';
-    font-weight: 700;
-    font-style: bold;
+    @include mixins.bold;
     width: 100%;
     border-radius: 0.25rem;
     border: 0.0625rem solid colors.$secondary-Mercury;

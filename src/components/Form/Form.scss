@@ -8,13 +8,11 @@
   &__container {
     max-width: 100%;
     @include mixins.tablet {
-      display: flex;
-      justify-content: space-between;
+      @include mixins.flex(space-between);
       align-items: center;
     }
     @include mixins.desktop {
-      display: flex;
-      justify-content: space-between;
+      @include mixins.flex(space-between);
       align-items: center;
       padding-right: 1.5rem;
     }
@@ -46,9 +44,7 @@
 
   // form label
   &__label {
-    font-weight: 700;
-    font-style: bold;
-    font-family: "Avenir";
+    @include mixins.bold;
     text-transform: uppercase;
     color: colors.$primary-Silver;
     font-size: 0.75rem; 
@@ -67,8 +63,7 @@
     
 
     &::placeholder { 
-      font-family: 'Avenir';
-      font-weight: 400;
+      @include mixins.regular;
       width: 100%;
       font-size: 0.75rem;
       color: colors.$primary-BrainFlix-Black; 

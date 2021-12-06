@@ -84,8 +84,7 @@
   // video title
   &__title {
     font-size: 0.8125rem;
-    font-weight: 700;
-    font-style: bold;
+    @include mixins.bold;
     padding-bottom: 0.5rem;
 
     @include mixins.tablet {
@@ -99,8 +98,7 @@
   // video channel
   &__channel {
     font-size: 0.8125rem;
-    font-weight: 400;
-    font-style: normal;
+    @include mixins.regular;
     
     @include mixins.tablet {
       font-size: 0.875rem;
