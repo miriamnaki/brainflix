@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(0.625rem + 2vmin);
   color: white;
 }
 
@@ -43,26 +43,31 @@
 
 
 // ******** custom component stylings *********
+
+// components container
 .app {
   @include mixins.desktop {
     display: flex;
     width: 80%;
-    margin: 0px auto;
+    margin: 0rem auto;
   }
 
+  // video list component
   &__video-list {
     @include mixins.desktop {
-      width: 450px;
-      padding-left: 8px;
+      width: 28.125rem;
+      padding-left: 0.5rem;
     }
   }
 
+  // video-details components
   &__video-details {
     @include mixins.desktop {
       width: 100%;
     }     
   }
 
+  // vertical divider
   &__vertical-divider {
     display: none;
     @include mixins.tablet {
