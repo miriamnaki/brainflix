@@ -35,8 +35,13 @@
     background-color: colors.$secondary-Mercury;
 
     @include mixins.tablet {
-      width: 6.25rem;
+      width: 6.875rem;
       height: 4.0625rem;
+    }
+    @include mixins.desktop {
+      width: 6.875rem;
+      height: 4.0625rem;
+      margin-right: 1rem;
     }
   }
 
@@ -51,8 +56,13 @@
     margin-bottom: 0.5rem;
 
     @include mixins.tablet {
-      width: 6.25rem;
+      width: 6.875rem;
       height: 4.0625rem;
+    }  
+    @include mixins.desktop {
+      width: 6.875rem;
+      height: 4.0625rem;
+      margin: 0;
     }  
   }
 
@@ -63,7 +73,11 @@
 
     @include mixins.tablet {
      padding-bottom: 1.5rem;
-     max-width: 39%;
+     max-width: 43.10%;
+    }
+    @include mixins.desktop {
+     padding-bottom: 1.5rem;
+    
     }
   }
 

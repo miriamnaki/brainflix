@@ -16,7 +16,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-right: 32px;
+      padding-right: 1.5rem;
     }
   }
 
@@ -39,6 +39,9 @@
   // form avatar
   &__avatar {
     padding-top: 1.25rem;
+    @include mixins.desktop {
+      padding-left: 0.5rem;
+    }
   }
 
   // form label
@@ -96,7 +99,7 @@
       padding: 0rem 1.5rem 1.5rem 1.5rem;    
     }
     @include mixins.desktop {
-      padding: 0rem 1.5rem 1.5rem 1.5rem;       
+      padding: 0rem 1.5rem 1.5rem 2.5rem;       
     }
   }
 

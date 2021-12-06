@@ -55,7 +55,7 @@
   // video list component
   &__video-list {
     @include mixins.desktop {
-      width: 28.125rem;
+      width: 31.25rem;
       padding-left: 0.5rem;
     }
   }
@@ -75,8 +75,9 @@
     }
     @include mixins.desktop {
       display: block;
-      background: colors.$secondary-Mercury;
+      border: 0.0625rem solid colors.$secondary-Mercury;
     }
+   
     
 
   }

@@ -1,8 +1,8 @@
 import React from 'react';
 import './VideoList.scss';
 
-
 const  VideoList = (props) => {
+
 
   return (
     <div className="video-list">
@@ -11,13 +11,12 @@ const  VideoList = (props) => {
       {props.videoList.map(video => {
         return (
           <>
-          <div className="video-list__container">
+          <div key={video.id} className="video-list__container">
             <div className="video-list__image-wrapper">
               <img 
                 className="video-list__image" 
                 src={video.image} 
                 alt="image" 
-                key={video.id}
                 onClick={() => props.onVideoSelect(video.id)}            
                 />
             </div>

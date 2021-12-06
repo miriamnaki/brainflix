@@ -83,7 +83,7 @@ const VideoDetails = (props) =>  {
           <p>{comments.length}</p>   
            return ( 
              <>    
-             <div className="video__comments">
+             <div  key={comment.timestamp} className="video__comments">
                <div className="video__comments-avatar-name-date-container">
                  <div className="video__comments-avatar-name-container">
                    {/* comments placeholder avatar */}

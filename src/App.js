@@ -8,7 +8,9 @@ import VideoList from './components/VideoList/VideoList';
 import videoDetails from './data/video-details.json';
 import videos from './data/videos.json';
 
+
  class App extends Component  {
+  
    state = {
       selectedVideo: videoDetails[0],
       videoList: videos
@@ -24,13 +26,14 @@ import videos from './data/videos.json';
   render(){
     // Removing selected video from list
     const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
+
     return (
       <>
       <Header/>
       <VideoSelected selectedVideo = {this.state.selectedVideo}/>
       <div className="app">
         <div className="app__video-details">
-          <VideoDetails
+          <VideoDetails  
             selectedVideo = {this.state.selectedVideo}
           />
         </div>
@@ -38,7 +41,7 @@ import videos from './data/videos.json';
         <hr className="app__vertical-divider"></hr>
 
         <div className="app__video-list">
-          <VideoList 
+          <VideoList
             videoList={filteredVideos}
             onVideoSelect={this.nextVideoHandler}
             />

@@ -6,16 +6,16 @@
   
   // video details container
   &__details-container {
-    padding: 14px 16px 14px 16px;
+    padding: 0.875rem 1rem 0.875rem 1rem;
 
     @include mixins.tablet {
-      padding: 24px 36px;
+      padding: 1.5rem 2.25rem;
     }
 
     @include mixins.desktop {
       // margin-left: auto;
       // width: 80%;
-      padding: 36px 0px;
+      padding: 2.25rem 0rem;
     }
   }
 
@@ -38,27 +38,26 @@
 
   // video title
   &__title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
     margin: 0;   
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include mixins.tablet {
-      font-size: 33px;
-      padding-bottom: 16px;
+      font-size: 2.0625rem;
+      padding-bottom: 1rem;
     }
     @include mixins.desktop {
-      font-size: 33px;
-      padding-bottom: 16px;
+      font-size: 2.0625rem;
+      padding-bottom: 1rem;
     }
   }
 
   // video divider
   &__divider {
-    height: 1px;
-    border: none;
+    border: 0.0625rem solid colors.$secondary-Mercury;
     width: 100%;
-    background: colors.$secondary-Mercury;
+    
 
     &--tablet-desktop {
       @include mixins.tablet {
@@ -77,12 +76,12 @@
     @include mixins.tablet {
       display: flex;
       justify-content: space-between;
-      padding-right: 0px;
+      padding-right: 0rem;
     }
     @include mixins.desktop {
       display: flex;
       justify-content: space-between;
-      padding-right: 0px;
+      padding-right: 0rem;
     }
     
   }
@@ -95,43 +94,43 @@
     @include mixins.desktop {
       display: flex;
       justify-content: space-between;
-      padding-right: 32px;
+      padding-right: 1.5rem;
     }
   }
 
 
   // channel
   &__channel {
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     font-style: bold;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include mixins.tablet {
-      padding-bottom: 0px;
-      padding-right: 40px;
-      font-size: 14px;
+      padding-bottom: 0rem;
+      padding-right: 2.5rem;
+      font-size: 0.875rem;
     }
     @include mixins.desktop {
-      padding-bottom: 0px;
-      padding-right: 40px;
-      font-size: 14px;
+      padding-bottom: 0rem;
+      padding-right: 2.5rem;
+      font-size: 0.875rem;
     }
   }
 
   // elements with similar styling
   // date,views, likes
   &__tags {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: colors.$primary-Silver;
     font-style: normal;
     font-weight: 400;
 
     @include mixins.tablet {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     @include mixins.desktop {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 
@@ -139,15 +138,15 @@
   &__info-wrapper {
     display: flex;
     justify-content: flex-start;
-    padding: 16px 0px 16px 0px;
+    padding: 1rem 0rem 1rem 0rem;
 
     @include mixins.tablet {
       justify-content: space-between;
-      padding: 0px 0px 8px 0px;
+      padding: 0rem 0rem 0.5rem 0rem;
     }
     @include mixins.desktop {
       justify-content: space-between;
-      padding: 0px 0px 8px 0px;
+      padding: 0rem 0rem 0.5rem 0rem;
     }
   }
 
@@ -155,18 +154,18 @@
   &__icon {
     border: none;
     background-color: colors.$primary-White;
-    padding-right: 8px;
-    height: 10px;
+    padding-right: 0.5rem;
+    height: 0.625rem;
   }
   &__icon > img {
-    height: 15px;
+    height: 0.9375rem;
   }
 
   // likes and views & corresponding icons individual container
   &__number-icon {
     display: flex;
     flex-direction: row;
-    padding-bottom: 16px;
+    padding-bottom: 1rem;
 
     @include mixins.tablet {
       padding-bottom: 0;
@@ -181,31 +180,31 @@
       padding-bottom: 0;
 
       @include mixins.tablet {
-        padding-left: 40px;
+        padding-left: 2.5rem;
       }
       @include mixins.desktop {
-        padding-left: 40px;
+        padding-left: 2.5rem;
       }
     }
   }
 
   // video description
   &__description {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
     font-style: normal;
-    padding: 16px 0px 16px 0px;
+    padding: 1rem 0rem 1rem 0rem;
 
     @include mixins.tablet {
-      font-size: 14px;
-      line-height: 22px;
-      padding: 24px 0px 24px 0px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1.5rem 0rem 1.5rem 0rem;
     }
     @include mixins.desktop {
-      font-size: 14px;
-      line-height: 22px;
-      padding: 24px 32px 24px 0px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1.5rem 1.5rem 1.5rem 0rem;
     }
   }
 
@@ -214,28 +213,28 @@
 
   // video comments number
   &__comment-number{
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 700;
     font-style: bold;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
 
     @include mixins.tablet {
-      padding-top: 8px;
+      padding-top: 0.5rem;
     }
     @include mixins.desktop {
-      padding-top: 8px;
+      padding-top: 0.5rem;
     }
   }
 
   &__comments {
-    padding: 16px 0px 16px 0px;
+    padding: 1rem 0rem 1rem 0rem;
     
     @include mixins.tablet {
-      padding: 24px 0px 24px 0px;
+      padding: 1.5rem 0rem 1.5rem 0rem;
       
     }
     @include mixins.desktop {
-      padding: 24px 32px 24px 0px;
+      padding: 1.5rem 1.5rem 1.5rem 0rem;
       
     }
   }
@@ -249,12 +248,13 @@
     border: none;
 
     @include mixins.tablet {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
     }
     @include mixins.desktop {
-      width: 40px;
-      height: 40px;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: 0.5rem;
     }
   }
 
@@ -262,7 +262,7 @@
   &__comments-avatar-name-date-container{
     display: flex;
     justify-content: space-between;
-    height: 24px;
+    height: 1.5rem;
 
   }
 
@@ -273,26 +273,33 @@
 
   // commenter's name
   &__comments-name {
-    padding-left: 16px;
+    padding-left: 1rem;
+
+    @include mixins.tablet {
+      padding-left: 1.5rem;
+    }
+    @include mixins.desktop {
+      padding-left: 2.5rem;
+    }
   }
 
   // comment description
   &__comments-description {
-    padding-left: 50px;
-    font-size: 13px;
-    line-height: 18px;
+    padding-left: 3.125rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
     font-style: normal;
 
     @include mixins.tablet {
-      padding-left: 55px;
-      font-size: 14px;
-      line-height: 22px;
+      padding-left: 4.0625rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
     @include mixins.desktop {
-      padding-left: 55px;
-      font-size: 14px;
-      line-height: 22px;
+      padding-left: 5.4375rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
   }
   
