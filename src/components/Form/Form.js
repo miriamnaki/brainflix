@@ -7,21 +7,18 @@ import './Form.scss'
 
 function Form({label, placeholder, name}) {
   return (
-    <div className="form">
-     
+    <div className="form">  
       <form className="form__container">
         <div className="form__wrapper"> 
+        {/* avatar */}
             <div className="form__avatar"> 
-            <Avatar
-            src ={avatar}
-            alt="avatar"
-            />
+              <Avatar
+                src ={avatar}
+              />
             </div>
-          
-              
+                {/*  text-area*/}
             <div className="form__text-area">
             <label className="form__label" htmlFor="description">{label}</label>
-
               <textarea 
                 className="form__description"
                 type="text"
@@ -38,6 +35,7 @@ function Form({label, placeholder, name}) {
             <Button
               value='comment'
               icon ={commentIcon}
+              alt='comment-icon'
             />
           </div>  
     </form>
