@@ -42,13 +42,12 @@
 }
 
 
-// ******** custom stylings *********
+// ******** custom component stylings *********
 .app {
   @include mixins.desktop {
     display: flex;
     width: 80%;
     margin: 0px auto;
-
   }
 
   &__video-list {
@@ -56,22 +55,23 @@
       width: 450px;
       padding-left: 8px;
     }
+  }
 
-    }
   &__video-details {
     @include mixins.desktop {
       width: 100%;
-      
-
-    } 
-    
+    }     
   }
 
-  &__vertical {
-    // height: 1px;
-    // border: none;
-    // width: 100%;
-    background: colors.$secondary-Mercury;
+  &__vertical-divider {
+    display: none;
+    @include mixins.tablet {
+      display: none;
+    }
+    @include mixins.desktop {
+      display: block;
+      background: colors.$secondary-Mercury;
+    }
     
 
   }

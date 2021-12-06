@@ -8,29 +8,22 @@ import VideoList from './components/VideoList/VideoList';
 import videoDetails from './data/video-details.json';
 import videos from './data/videos.json';
 
-console.log(videoDetails)
-
-
  class App extends Component  {
    state = {
       selectedVideo: videoDetails[0],
       videoList: videos
    }
    
-
+  //  function to update state when video is clicked
    nextVideoHandler = (id) => {
-     console.log('This is a', id)
      this.setState({
        selectedVideo: videoDetails.find(video => video.id === id)
       })
    }
 
   render(){
-    // console.log(this.state.selectedVideo)
-
+    // Removing selected video from list
     const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
-    console.log(videos.id)
-
     return (
       <>
       <Header/>
@@ -41,8 +34,8 @@ console.log(videoDetails)
             selectedVideo = {this.state.selectedVideo}
           />
         </div>
-        <hr className="app__vertical"></hr>
 
+        <hr className="app__vertical-divider"></hr>
 
         <div className="app__video-list">
           <VideoList 
@@ -50,12 +43,9 @@ console.log(videoDetails)
             onVideoSelect={this.nextVideoHandler}
             />
         </div>
-
       </div>
-      </>
-     
+      </>    
     );
-
   }
 }
 
