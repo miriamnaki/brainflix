@@ -1,11 +1,12 @@
 import React from 'react';
 import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
+import TextArea from '../TextArea/TextArea';
 import avatar from '../../assets/images/Mohan-muruge.jpg';
 import commentIcon from '../../assets/icons/add_comment.svg';
 import './Form.scss'
 
-function Form({label, placeholder, name}) {
+function Form() {
   return (
     <div className="form">  
       <form className="form__container">
@@ -16,8 +17,12 @@ function Form({label, placeholder, name}) {
                 src ={avatar}
               />
             </div>
+            <TextArea
+              label="join the converstion"
+              placeholder="Add a new comment"
+            />
                 {/*  text-area*/}
-            <div className="form__text-area">
+            {/* <div className="form__text-area">
             <label className="form__label" htmlFor="description">{label}</label>
               <textarea 
                 className="form__description"
@@ -28,7 +33,7 @@ function Form({label, placeholder, name}) {
                 rows="6"
                 required
                 placeholder={placeholder}></textarea>
-            </div>
+            </div> */}
           </div>  
 
           <div className="form__button">

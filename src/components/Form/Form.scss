@@ -43,14 +43,14 @@
   }
 
   // form label
-  &__label {
-    @include mixins.bold;
-    text-transform: uppercase;
-    color: colors.$primary-Silver;
-    font-size: 0.75rem; 
-    display: block;
-    padding-bottom: 0.25rem;
-  }
+  // &__label {
+  //   @include mixins.bold;
+  //   text-transform: uppercase;
+  //   color: colors.$primary-Silver;
+  //   font-size: 0.75rem; 
+  //   display: block;
+  //   padding-bottom: 0.25rem;
+  // }
 
   // form description
   &__description {
@@ -85,18 +85,18 @@
     } 
   }
 
-  // form text-area
-  &__text-area {
-    padding: 0rem 0rem 0.5rem 1rem;  
-    width: 100%;
+  // // form text-area
+  // &__text-area {
+  //   padding: 0rem 0rem 0.5rem 1rem;  
+  //   width: 100%;
 
-    @include mixins.tablet {
-      padding: 0rem 1.5rem 1.5rem 1.5rem;    
-    }
-    @include mixins.desktop {
-      padding: 0rem 1.5rem 1.5rem 2.5rem;       
-    }
-  }
+  //   @include mixins.tablet {
+  //     padding: 0rem 1.5rem 1.5rem 1.5rem;    
+  //   }
+  //   @include mixins.desktop {
+  //     padding: 0rem 1.5rem 1.5rem 2.5rem;       
+  //   }
+  // }
 
   // form button
   &__button {
