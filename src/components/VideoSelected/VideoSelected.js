@@ -1,7 +1,9 @@
 import React from 'react';
 import './VideoSelected.scss';
 
+
 function VideoSelected(props) {
+  console.log(props)
   const {video, image} = props.selectedVideo;
   return (
     <div className="selected-video">
