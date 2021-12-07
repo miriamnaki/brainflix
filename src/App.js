@@ -7,6 +7,7 @@ import VideoSelected from './components/VideoSelected/VideoSelected';
 import VideoList from './components/VideoList/VideoList';
 import videoDetails from './data/video-details.json';
 import videos from './data/videos.json';
+import { BrowserRouter,Switch, Route, Link } from 'react-router-dom';
 
 
  class App extends Component  {
@@ -28,18 +29,15 @@ import videos from './data/videos.json';
     const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
 
     return (
-      <>
+      
+      <BrowserRouter>
       <Header/>
-      <VideoSelected selectedVideo = {this.state.selectedVideo}/>
+        <Switch>
+          <VideoSelected selectedVideo = {this.state.selectedVideo}/>
+
+        </Switch>
       <div className="app">
         <div className="app__video-details">
-          {/* need to review this, it breaks my application */}
-          {/* {videoDetails.map((video)=> {
-             <VideoDetails 
-             key={video.comments.timestamp} 
-             selectedVideo = {this.state.selectedVideo}
-           />
-          })} */}
            <VideoDetails  
              selectedVideo = {this.state.selectedVideo}
            />
@@ -47,9 +45,7 @@ import videos from './data/videos.json';
 
         <hr className="app__vertical-divider"></hr>
 
-        <div className="app__video-list">
-          {/* need to review this, it breaks my application */}
-            
+        <div className="app__video-list">         
             <VideoList  
               videoList={filteredVideos}
               onVideoSelect={this.nextVideoHandler}
@@ -58,7 +54,8 @@ import videos from './data/videos.json';
          
         </div>
       </div>
-      </>    
+      </BrowserRouter>
+         
     );
   }
 }
