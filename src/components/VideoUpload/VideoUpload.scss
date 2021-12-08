@@ -3,6 +3,10 @@
 @use '../../styles/partials/mixins';
 .video-upload {
   padding: 0px 16px;
+
+  @include mixins.tablet {
+    padding: 0px 36px;
+  }
   &__thumbnail {
     background-image: url('../../assets/images/Upload-video-preview.jpg');
     background-position: center;
@@ -11,10 +15,21 @@
     height: 160px  ;
     margin-bottom: 16px; 
     border-radius: 4px;
+
+    @include mixins.tablet {
+      height: 200px;
+      max-width: 350px;
+    }
   }
 
   &__divider {
     border: 1px solid colors.$secondary-Mercury;
+    &--desktop {
+      display: none;
+      @include mixins.tablet {
+        display: block;
+      }
+    }
   }
 
   &__title {
@@ -23,6 +38,12 @@
     padding-bottom: 24px;
     text-transform: capitalize;
     font-size: 24px;
+
+    @include mixins.tablet {
+      font-size: 33px;
+      padding-top: 36px;
+      padding-bottom: 24px;
+    }
   }
 
   &__label {
@@ -32,10 +53,18 @@
     font-size: 0.75rem; 
     display: block;
     padding-bottom: 5px;
+
+    @include mixins.tablet {
+      padding-top: 24px;
+    }
   }
 
   &__input {
     padding-bottom: 16px;
+
+    @include mixins.tablet {
+      // padding: 0px;
+    }
   }
   
     // text area description
@@ -63,10 +92,10 @@
 
     // form description tablet desktop
     @include mixins.tablet {
-      height: 2.5rem;
+      // height: 2.5rem;
     }
     @include mixins.desktop {
-      height: 2.5rem;
+      // height: 2.5rem;
     } 
   }
   
@@ -75,6 +104,10 @@
     // padding-left: 16px;
     padding-top: 8px;
     padding-bottom: 40px;
+
+    @include mixins.tablet {
+      padding: 0px;
+    }
   }
   &__cancel {
     text-align: center;
@@ -82,6 +115,21 @@
     font-size: 13px;
     color: colors.$primary-BrainFlix-Blue;
     background-color: colors.$primary-White;
-    @include mixins.bold
+    @include mixins.bold;
+
+    @include mixins.tablet {
+      text-align: left;
+      padding-right: 80px;
+    } 
+  }
+
+  &__button-cancel {
+
+    @include mixins.tablet {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      padding-top: 24px;
+    }
   }
 }

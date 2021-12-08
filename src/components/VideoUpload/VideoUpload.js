@@ -11,6 +11,8 @@ function VideoUpload() {
     <div className="video-upload">
       <hr className="video-upload__divider"></hr>
       <h1 className="video-upload__title">upload video</h1>
+      <hr className="video-upload__divider video-upload__divider--desktop"></hr>
+
       <p className="video-upload__label">video thumbnail</p>
       <div className="video-upload__thumbnail"></div>
       <div className="video-upload__input">
@@ -24,6 +26,8 @@ function VideoUpload() {
         />
       </div>
 
+     
+
       <div className="video-upload__input">
         <TextArea
           className= "video-upload__description"
@@ -33,7 +37,9 @@ function VideoUpload() {
           placeholder="Add a description to your video"
         />
       </div>
-      
+      <hr className="video-upload__divider video-upload__divider--desktop"></hr>
+
+      <div className="video-upload__button-cancel">
       <div className="video-upload__button">
         <Button
         value= "publish"
@@ -43,6 +49,7 @@ function VideoUpload() {
 
       
       <p className="video-upload__cancel">cancel</p>
+      </div>
         
     </div>
   );
