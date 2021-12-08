@@ -13,29 +13,34 @@ function VideoUpload() {
       <h1 className="video-upload__title">upload video</h1>
       <hr className="video-upload__divider video-upload__divider--desktop"></hr>
 
-      <p className="video-upload__label">video thumbnail</p>
-      <div className="video-upload__thumbnail"></div>
-      <div className="video-upload__input">
-        <TextArea
-        className= "video-upload__description"
-        rows="2"
-        cols="20"
-        label="title to your video"
-        placeholder="Add a title to your video"
+      <div className="video-upload__container">
+        <div className="video-upload__label-thumbnail">
+          <p className="video-upload__label">video thumbnail</p>
+          <div className="video-upload__thumbnail"></div>
+        </div>
 
-        />
-      </div>
+        <div className="video-upload__input-wrapper">
 
-     
+          <div className="video-upload__input">
+            <TextArea
+              className= "video-upload__description"
+              rows="2"
+              cols="20"
+              label="title to your video"
+              placeholder="Add a title to your video"
+            />
+          </div>
 
-      <div className="video-upload__input">
-        <TextArea
-          className= "video-upload__description"
-          cols="40"
-          rows="5"
-          label="add a video description"
-          placeholder="Add a description to your video"
-        />
+          <div className="video-upload__input">
+            <TextArea
+              className= "video-upload__description"
+              cols="40"
+              rows="5"
+              label="add a video description"
+              placeholder="Add a description to your video"
+            />
+          </div>
+        </div>
       </div>
       <hr className="video-upload__divider video-upload__divider--desktop"></hr>
 

@@ -20,6 +20,10 @@
       height: 200px;
       max-width: 350px;
     }
+    @include mixins.desktop {
+      height: 170px;
+      max-width: 330px;
+    }
   }
 
   &__divider {
@@ -27,6 +31,9 @@
     &--desktop {
       display: none;
       @include mixins.tablet {
+        display: block;
+      }
+      @include mixins.desktop {
         display: block;
       }
     }
@@ -44,6 +51,13 @@
       padding-top: 36px;
       padding-bottom: 24px;
     }
+    @include mixins.desktop {
+      font-size: 33px;
+      padding-top: 36px;
+      padding-bottom: 24px;
+      width: 80%;
+      margin: auto
+    }
   }
 
   &__label {
@@ -55,6 +69,9 @@
     padding-bottom: 5px;
 
     @include mixins.tablet {
+      padding-top: 24px;
+    }
+    @include mixins.desktop {
       padding-top: 24px;
     }
   }
@@ -108,6 +125,9 @@
     @include mixins.tablet {
       padding: 0px;
     }
+    @include mixins.desktop {
+      padding: 0px;
+    }
   }
   &__cancel {
     text-align: center;
@@ -121,6 +141,10 @@
       text-align: left;
       padding-right: 80px;
     } 
+    @include mixins.desktop {
+      text-align: left;
+      padding-right: 80px;
+    } 
   }
 
   &__button-cancel {
@@ -130,6 +154,42 @@
       align-items: center;
       flex-direction: row-reverse;
       padding-top: 24px;
+    }
+    @include mixins.desktop {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      padding-top: 24px;
+      width: 80%;
+      margin: auto;
+    }
+  }
+
+  &__container {
+    @include mixins.desktop {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      width: 80%;
+      margin: auto;
+      padding-bottom: 16px;
+
+    }
+  }
+
+  &__label-thumbnail {
+    @include mixins.desktop {
+      flex-basis: 0px;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  &__input-wrapper {
+    @include mixins.desktop {
+      flex-basis: 280px;
+      flex-grow: 1;
+      flex-shrink: 0;
     }
   }
 }
