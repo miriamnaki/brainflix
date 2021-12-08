@@ -5,6 +5,7 @@ import Input from '../Input/Input';
 import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import uploadIcon from '../../assets/icons/upload.svg';
+import searchIcon from '../../assets/icons/search.svg';
 
 function Header() {
   return (
@@ -17,7 +18,11 @@ function Header() {
         {/* Input component */}
         <div className="header__input-avatar-container">
           <div className="header__input">
-            <Input />
+            <Input 
+            icon ={searchIcon}
+            placeholder="Search"
+            alt="search"
+            />
           </div>
 
           {/* Avatar component */}

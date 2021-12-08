@@ -1,16 +1,15 @@
 import React from 'react';
 import './Input.scss';
-import searchIcon from '../../assets/icons/search.svg';
 
-function Input() {
+function Input({icon, placeholder, alt}) {
   return (
     <div className="search">
       <input className="search__input" 
         type="search"
         name="search"
-        placeholder="Search"
+        placeholder={placeholder}
       />
-      <img className="search__icon" src={searchIcon} alt="searchIcon" />  
+      <img className="search__icon" src={icon} alt={alt} />  
     </div>
   );
 }

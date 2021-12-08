@@ -17,10 +17,16 @@ function Form() {
                 src ={avatar}
               />
             </div>
+            <div className= "form__text-area">
             <TextArea
+              cols="40"
+              rows="6"
               label="join the converstion"
               placeholder="Add a new comment"
+              className="form__description"
             />
+
+            </div>
                 {/*  text-area*/}
             {/* <div className="form__text-area">
             <label className="form__label" htmlFor="description">{label}</label>

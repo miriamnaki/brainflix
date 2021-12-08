@@ -1,6 +1,87 @@
+@use '../../styles/partials/globals';
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
 .video-upload {
+  padding: 0px 16px;
   &__thumbnail {
-    height: 100px;
-    width: 100px;
+    background-image: url('../../assets/images/Upload-video-preview.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 160px  ;
+    margin-bottom: 16px; 
+    border-radius: 4px;
+  }
+
+  &__divider {
+    border: 1px solid colors.$secondary-Mercury;
+  }
+
+  &__title {
+    @include mixins.bold;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    text-transform: capitalize;
+    font-size: 24px;
+  }
+
+  &__label {
+    @include mixins.bold;
+    text-transform: uppercase;
+    color: colors.$primary-Silver;
+    font-size: 0.75rem; 
+    display: block;
+    padding-bottom: 5px;
+  }
+
+  &__input {
+    padding-bottom: 16px;
+  }
+  
+    // text area description
+  &__description {
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid colors.$secondary-Mercury;
+    background-color: rgba(246, 246, 246, 0.7);
+    padding: 0.5rem 0rem 0px 0.625rem;
+    
+
+    &::placeholder { 
+      @include mixins.regular;
+      width: 100%;
+      font-size: 13px;
+      color: colors.$primary-BrainFlix-Black; 
+      
+      @include mixins.tablet {
+        font-size: 0.875rem;
+      }
+      @include mixins.desktop {
+        font-size: 0.875rem;
+      }
+    }
+
+    // form description tablet desktop
+    @include mixins.tablet {
+      height: 2.5rem;
+    }
+    @include mixins.desktop {
+      height: 2.5rem;
+    } 
+  }
+  
+  &__button {
+    // padding-right: 16px;
+    // padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 40px;
+  }
+  &__cancel {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: colors.$primary-BrainFlix-Blue;
+    background-color: colors.$primary-White;
+    @include mixins.bold
   }
 }
