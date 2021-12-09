@@ -4,6 +4,9 @@ import VideoDetails from '../../VideoDetails/VideoDetails';
 import VideoList from '../../VideoList/VideoList';
 import { Component } from 'react';
 import axios from 'axios';
+import Loader from "react-loader-spinner";
+
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 // import videos from '../../../data/videos.json';
 // import videoDetails from '../../../data/video-details.json';
 // import { API_KEY } from './HomePage';
@@ -43,9 +46,10 @@ componentDidMount(){
   .then((response) => {
     console.log(response.data)
 
-    // setstate for the fetched videos
+    // setstate for the fetched videos  
     let fetchedList = response.data
     // const firstVideoId = response.data[0].id
+    // const filteredVideos = this.state.videoList.filter(video => video.id !== this.state.selectedVideo.id)
 
     this.setState({
       videoList: fetchedList,
@@ -54,6 +58,18 @@ componentDidMount(){
     this.fetchDetails(thisVideo)
      
   })
+}
+
+componentDidUpdate(prevProps){
+  const currentVideo = this.props.match.params.videoId
+  console.log("prev props", prevProps.match.params.videoId)
+  console.log('After props', currentVideo)
+  if(prevProps.match.params.videoId !== currentVideo) {
+    this.fetchDetails(currentVideo)
+
+  }
+
+
 }
 
 fetchDetails = (videoId) => {
@@ -86,7 +102,22 @@ fetchDetails = (videoId) => {
   render(){
     console.log("props", this.props)
     // Removing selected video from list
-    // const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
+    const list = this.state.videoList
+    const videolist = this.state.selectedVideo
+    console.log("video-list", videolist)
+    if (!this.state.selectedVideo) {
+      return <Loader
+      type="ThreeDots"
+      color= "blue"
+      height={50}
+      width={50}
+      timeout={3000} 
+    />
+    }
+    const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id)
+    // console.log("filtered", filteredVideos)
+    console.log('list', list)
+
     return (
       <>
          <VideoSelected selectedVideo = {this.state.selectedVideo}/>
@@ -102,7 +133,7 @@ fetchDetails = (videoId) => {
 
         <div className="app__video-list">         
             <VideoList  
-              videoList={this.state.videoList}
+              videoList={filteredVideos}
               // videoList={filteredVideos}
               // onVideoSelect={this.nextVideoHandler}
               />
