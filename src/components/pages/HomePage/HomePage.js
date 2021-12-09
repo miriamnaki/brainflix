@@ -14,11 +14,13 @@ export const API_URL = 'https://project-2-api.herokuapp.com/videos';
 const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
 
 class HomePage extends Component{
+ 
   state = {
     // selectedVideo: videoDetails[0],
     // videoList: videos
-    videoList: [],
-    selectedVideo: null
+    videoList: [], //video list
+    selectedVideo: null,  //selected video
+    videoDetails: [] //video details
  }
  
 //  function to update state when video is clicked
@@ -31,28 +33,58 @@ class HomePage extends Component{
 
 // initial video fetch
 componentDidMount(){
+  console.log("These are my props", this.props)
+
+  // all videos
+  const currentVideo = this.props.match.params.videoId
+  console.log("current",currentVideo)
+
   allVideos
   .then((response) => {
     console.log(response.data)
 
     // setstate for the fetched videos
     let fetchedList = response.data
-    const firstVideoId = response.data[0].id
+    // const firstVideoId = response.data[0].id
 
-    axios.get(`${ API_URL}/${firstVideoId}?api_key=${API_KEY}`)
-    .then(res => {
-      console.log(res)
-      const selected = res.data
-      console.log(selected)
-      this.setState({
-        videoList: fetchedList,
-        selectedVideo: selected        
+    this.setState({
+      videoList: fetchedList,
     })
-    })   
+    const thisVideo =  currentVideo ?  currentVideo : response.data[0].id
+    this.fetchDetails(thisVideo)
+     
   })
 }
 
+fetchDetails = (videoId) => {
+  this.state.videoList.find(video => {
+    if(video.id === videoId){
+
+      axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
+        .then(res => {
+          console.log('Fetched Details',res)
+    
+          const result = res.data
+          console.log('Iam result', result)
+    
+          console.log(result)
+          // const video = res.data[0]
+          // console.log('I am a',video)
+          // console.log(currVideo)
+    
+          this.setState({
+          selectedVideo: result,
+          // videoDetails: result
+        })
+        })   
+    }
+  })
+  
+  
+}
+
   render(){
+    console.log("props", this.props)
     // Removing selected video from list
     // const filteredVideos = videos.filter(video => video.id !== this.state.selectedVideo.id)
     return (
