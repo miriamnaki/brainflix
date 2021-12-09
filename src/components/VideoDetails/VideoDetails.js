@@ -5,7 +5,14 @@ import likesIcon from '../../assets/icons/likes.svg'
 import Form from '../Form/Form';
 
 const VideoDetails = (props) =>  {
+  console.log(props)
+
+  if(!props.selectedVideo){
+    return <p>Loading Videos.....</p>
+  }
   const {title, channel, timestamp,views,likes,description,comments} = props.selectedVideo;
+  // const selectedVideo = props.selectedVideo.match.params.VideoDetails;
+  // console.log(selectedVideo)
  
   // function to get current date
   function getCurrentDate(timestamp){
