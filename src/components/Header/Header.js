@@ -11,10 +11,12 @@ import searchIcon from '../../assets/icons/search.svg';
 function Header() {
   return (
     <div className="header">
+      
       {/* Logo component */}
         <div className="header__logo">
           <Logo/>
         </div>
+     
 
         {/* Input component */}
         <div className="header__input-avatar-container">

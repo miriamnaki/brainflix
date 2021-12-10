@@ -19,43 +19,30 @@ const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
 class HomePage extends Component{
  
   state = {
-    // selectedVideo: videoDetails[0],
-    // videoList: videos
-    videoList: [], //video list
-    selectedVideo: null,  //selected video
-    videoDetails: [] //video details
+    videoList: [], 
+    selectedVideo: null,  
+    videoDetails: [] 
  }
  
-//  function to update state when video is clicked
-//  nextVideoHandler = (id) => {
-//    this.setState({
-//      selectedVideo: videoDetails.find(video => video.id === id)
-//     })
-//  }
-
-
 // initial video fetch
 componentDidMount(){
   console.log("These are my props", this.props)
-
   // all videos
   const currentVideo = this.props.match.params.videoId
-  console.log("current",currentVideo)
 
+  console.log("current",currentVideo)
   allVideos
   .then((response) => {
     console.log(response.data)
-
-    // setstate for the fetched videos  
+  
     let fetchedList = response.data
-    // const firstVideoId = response.data[0].id
-    // const filteredVideos = this.state.videoList.filter(video => video.id !== this.state.selectedVideo.id)
-
+   
     this.setState({
       videoList: fetchedList,
     })
-    const thisVideo =  currentVideo ?  currentVideo : response.data[0].id
-    this.fetchDetails(thisVideo)
+
+    const mainVideo =  currentVideo ?  currentVideo : response.data[0].id
+    this.fetchDetails(mainVideo)
      
   })
 }
@@ -70,21 +57,16 @@ componentDidUpdate(prevProps){
     this.fetchDetails(currentVideo)
 
   }
-  if(currentVideo === homeUrl) {
-    // allVideos
-    // .then(res => {
-    //   this.fetchDetails(res.data[0].id)
-    // })
-    this.fetchDetails(this.state.videoList[0].id)
+  console.log('current video', currentVideo)
+  console.log('url', homeUrl)
+  console.log(this.state)
+  if(!this.state.selectedVideo || (currentVideo === homeUrl && this.state.selectedVideo.id !== this.state.videoList[0].id)) {
+      this.fetchDetails(this.state.videoList[0].id)
   }
-
-
+ 
 }
 
 fetchDetails = (videoId) => {
-  // this.state.videoList.find(video => {
-  //   if(video.id === videoId){
-
       axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
         .then(res => {
           console.log('Fetched Details',res)
@@ -93,29 +75,14 @@ fetchDetails = (videoId) => {
           console.log('Iam result', result)
     
           console.log(result)
-          // const video = res.data[0]
-          // console.log('I am a',video)
-          // console.log(currVideo)
-    
+          
           this.setState({
           selectedVideo: result,
-          // videoDetails: result
+          
         })
-        })   
-    // }
-  // })   
+        })     
 }
 
-// postComments = (videoId) => {
-//   // POST /videos/:id/comments
-//   axios.post(`${ API_URL}/${videoId}?api_key=${API_KEY}`,
-//   {}
-//   )
-// }
-
-// handleSubmit = ( ) => {
-
-// }
 
   render(){
     console.log("props", this.props)
@@ -133,7 +100,7 @@ fetchDetails = (videoId) => {
     />
     }
     const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id)
-    // console.log("filtered", filteredVideos)
+    
     console.log('list', list)
 
     return (
@@ -152,8 +119,6 @@ fetchDetails = (videoId) => {
         <div className="app__video-list">         
             <VideoList  
               videoList={filteredVideos}
-              // videoList={filteredVideos}
-              // onVideoSelect={this.nextVideoHandler}
               />
         </div>
       </div>

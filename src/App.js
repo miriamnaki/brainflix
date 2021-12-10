@@ -25,7 +25,7 @@ import VideoDetailsPage from './components/pages/VideoDetailsPage/VideoDetailsPa
       <BrowserRouter>
       <Header/>
         <Switch>
-            <Route path='/' exact={true} component={HomePage}></Route>
+            <Route path='/' exact component={HomePage}></Route>
 
             <Route path="/video-upload" component={VideoUploadPage}></Route>
             <Route path="/videos/:videoId"  component={HomePage}></Route>
