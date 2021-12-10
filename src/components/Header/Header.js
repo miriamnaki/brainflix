@@ -4,6 +4,7 @@ import Logo from '../Logo/Logo';
 import Input from '../Input/Input';
 import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 import uploadIcon from '../../assets/icons/upload.svg';
 import searchIcon from '../../assets/icons/search.svg';
 
@@ -32,13 +33,15 @@ function Header() {
         </div>
 
         {/* Button component */}
-        <div className="header__button">
-          <Button
-            value="upload"
-            icon= {uploadIcon}
-            alt ='uploadIcon'
-          />
-        </div>
+        <Link to="/video-upload">
+          <div className="header__button">
+            <Button
+              value="upload"
+              icon= {uploadIcon}
+              alt ='uploadIcon'
+            />
+          </div>
+        </Link>
 
         {/* tablet and desktop Avatar component */}
         <div className="header__avatar-tablet">

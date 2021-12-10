@@ -12,7 +12,7 @@ function TextArea({label, placeholder, name, cols, rows,className}) {
           id={name}
           cols={cols} 
           rows={rows}
-          required
+          
           placeholder={placeholder}></textarea>
     </div>
   );

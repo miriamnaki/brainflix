@@ -78,10 +78,10 @@ const VideoDetails = (props) =>  {
 
         {/* comments form */}
         <Form
-          label= "join the converstion"
-          placeholder="Add a new comment"
-          src="placeholder"
-          alt= 'avatar'
+          // label= "join the converstion"
+          // placeholder="Add a new comment"
+          // src="placeholder"
+          // alt= 'avatar'
         />
 
         <hr className= "video__divider"></hr> 

@@ -41,14 +41,15 @@ function Form() {
                 placeholder={placeholder}></textarea>
             </div> */}
           </div>  
-
+          
           <div className="form__button">
             <Button
               value='comment'
               icon ={commentIcon}
               alt='comment-icon'
             />
-          </div>  
+          </div>
+         
     </form>
       
     </div>

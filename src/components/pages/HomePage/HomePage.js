@@ -62,19 +62,28 @@ componentDidMount(){
 
 componentDidUpdate(prevProps){
   const currentVideo = this.props.match.params.videoId
+  const homeUrl = this.props.match.params.url
+  
   console.log("prev props", prevProps.match.params.videoId)
   console.log('After props', currentVideo)
   if(prevProps.match.params.videoId !== currentVideo) {
     this.fetchDetails(currentVideo)
 
   }
+  if(currentVideo === homeUrl) {
+    // allVideos
+    // .then(res => {
+    //   this.fetchDetails(res.data[0].id)
+    // })
+    this.fetchDetails(this.state.videoList[0].id)
+  }
 
 
 }
 
 fetchDetails = (videoId) => {
-  this.state.videoList.find(video => {
-    if(video.id === videoId){
+  // this.state.videoList.find(video => {
+  //   if(video.id === videoId){
 
       axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
         .then(res => {
@@ -93,11 +102,20 @@ fetchDetails = (videoId) => {
           // videoDetails: result
         })
         })   
-    }
-  })
-  
-  
+    // }
+  // })   
 }
+
+// postComments = (videoId) => {
+//   // POST /videos/:id/comments
+//   axios.post(`${ API_URL}/${videoId}?api_key=${API_KEY}`,
+//   {}
+//   )
+// }
+
+// handleSubmit = ( ) => {
+
+// }
 
   render(){
     console.log("props", this.props)
