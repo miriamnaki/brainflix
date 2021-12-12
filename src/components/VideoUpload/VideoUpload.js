@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import publishIcon from '../../assets/icons/publish.svg'
 import Form from '../Form/Form';
 import { Redirect } from 'react-router';
-
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 class VideoUpload extends Component {
@@ -17,18 +17,22 @@ class VideoUpload extends Component {
   handleOnSubmit = (e) => {
    e.preventDefault();
    e.target.reset();
-   alert("Form submitted")
    this.setState({redirect: true})
    
  }
   render() {
     const redirectHome = this.state.redirect
     if(redirectHome) {
+      toast.success("Form submitted",{
+        position: 'top-center',
+        autoClose: 5000
+      })
       return <Redirect to='/' />
     }
    return (
      <> 
      <form  onSubmit={this.handleOnSubmit}className="video-upload">
+     
        <hr className="video-upload__divider"></hr>
        <h1 className="video-upload__title">upload video</h1>
        <hr className="video-upload__divider video-upload__divider--desktop"></hr>

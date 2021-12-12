@@ -7,6 +7,7 @@ import VideoSelected from './components/VideoSelected/VideoSelected';
 // import VideoList from './components/VideoList/VideoList';
 // import videoDetails from './data/video-details.json';
 // import videos from './data/videos.json';
+import { ToastContainer } from 'react-toastify';
 import { BrowserRouter,Switch, Route, Link } from 'react-router-dom';
 import HomePage from './components/pages/HomePage/HomePage';
 import VideoUploadPage from './components/pages/VideoUploadPage/VideoUploadPage';
@@ -23,6 +24,7 @@ import VideoDetailsPage from './components/pages/VideoDetailsPage/VideoDetailsPa
     return (
       
       <BrowserRouter>
+      <ToastContainer/>
       <Header/>
         <Switch>
             <Route path='/' exact component={HomePage}></Route>
