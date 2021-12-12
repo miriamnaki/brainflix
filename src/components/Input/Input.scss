@@ -4,7 +4,7 @@
 .search {
   position: relative;
 
-  // input field
+  // search field
   &__input {
     color: colors.$primary-BrainFlix-Black;
     @include mixins.bold;
@@ -27,17 +27,17 @@
     }
   }
 
+  // search placeholder
   &::placeholder {
     color: colors.$primary-BrainFlix-Black;
     margin-left: 2.5rem;
     font-size: 2.5rem;
   }
 
-  // input icon
+  // search input icon
   &__icon {
     position: absolute;
     left: 0.625rem;
     top: 0.625rem;
-
   }
 }

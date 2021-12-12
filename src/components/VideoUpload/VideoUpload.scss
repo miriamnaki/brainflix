@@ -7,25 +7,8 @@
   @include mixins.tablet {
     padding: 0px 36px;
   }
-  &__thumbnail {
-    background-image: url('../../assets/images/Upload-video-preview.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 160px  ;
-    margin-bottom: 16px; 
-    border-radius: 4px;
 
-    @include mixins.tablet {
-      height: 200px;
-      max-width: 350px;
-    }
-    @include mixins.desktop {
-      height: 170px;
-      max-width: 330px;
-    }
-  }
-
+  // divider
   &__divider {
     border: 1px solid colors.$secondary-Mercury;
     &--desktop {
@@ -39,6 +22,7 @@
     }
   }
 
+  // title
   &__title {
     @include mixins.bold;
     padding-top: 24px;
@@ -60,6 +44,7 @@
     }
   }
 
+  // thumbnail label
   &__label {
     @include mixins.bold;
     text-transform: uppercase;
@@ -76,77 +61,36 @@
     }
   }
 
-  &__input {
-    padding-bottom: 16px;
-
-    @include mixins.tablet {
-      // padding: 0px;
-    }
-  }
-  
-    // text area description
-  &__description {
-    width: 100%;
-    border-radius: 0.3125rem;
-    border: 0.0625rem solid colors.$secondary-Mercury;
-    background-color: rgba(246, 246, 246, 0.7);
-    padding: 0.5rem 0rem 0px 0.625rem;
-    
-
-    &::placeholder { 
-      @include mixins.regular;
-      width: 100%;
-      font-size: 13px;
-      color: colors.$primary-BrainFlix-Black; 
-      
-      @include mixins.tablet {
-        font-size: 0.875rem;
-      }
+    // thumbnail wrapper div
+    &__label-thumbnail {
       @include mixins.desktop {
-        font-size: 0.875rem;
+        flex-basis: 0px;
+        flex-grow: 1;
+        flex-shrink: 0;
       }
     }
 
-    // form description tablet desktop
-    @include mixins.tablet {
-      // height: 2.5rem;
-    }
-    @include mixins.desktop {
-      // height: 2.5rem;
-    } 
-  }
-  
-  &__button {
-    // padding-right: 16px;
-    // padding-left: 16px;
-    padding-top: 8px;
-    padding-bottom: 40px;
+  // thumbnail
+  &__thumbnail {
+    background-image: url('../../assets/images/Upload-video-preview.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 160px  ;
+    margin-bottom: 16px; 
+    border-radius: 4px;
 
     @include mixins.tablet {
-      padding: 0px;
+      height: 200px;
+      max-width: 350px;
     }
     @include mixins.desktop {
-      padding: 0px;
+      height: 170px;
+      max-width: 330px;
     }
   }
-  &__cancel {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 13px;
-    color: colors.$primary-BrainFlix-Blue;
-    background-color: colors.$primary-White;
-    @include mixins.bold;
 
-    @include mixins.tablet {
-      text-align: left;
-      padding-right: 80px;
-    } 
-    @include mixins.desktop {
-      text-align: left;
-      padding-right: 80px;
-    } 
-  }
-
+  // publish button and cancel button container
   &__button-cancel {
 
     @include mixins.tablet {
@@ -165,6 +109,82 @@
     }
   }
 
+  // input fields wrapper
+  &__input-wrapper {
+    @include mixins.desktop {
+      flex-basis: 280px;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  // input field wrapper
+  &__input {
+    padding-bottom: 16px;
+  }
+  
+    // input field
+  &__description {
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid colors.$secondary-Mercury;
+    background-color: rgba(246, 246, 246, 0.7);
+    padding: 0.5rem 0rem 0px 0.625rem;
+    
+    // input place holder
+    &::placeholder { 
+      @include mixins.regular;
+      width: 100%;
+      font-size: 13px;
+      color: colors.$primary-BrainFlix-Black; 
+      
+      @include mixins.tablet {
+        font-size: 0.875rem;
+      }
+      @include mixins.desktop {
+        font-size: 0.875rem;
+      }
+    }
+  }
+  
+  // form submisssion button
+  &__button {
+    padding-top: 8px;
+    padding-bottom: 40px;
+
+    @include mixins.tablet {
+      padding: 0px;
+    }
+    @include mixins.desktop {
+      padding: 0px;
+    }
+  }
+
+  // cancel button wrapper
+  &__cancel-wrapper {  
+    text-decoration: none;
+  }
+
+  // cancel button
+  &__cancel {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: colors.$primary-BrainFlix-Blue;
+    background-color: colors.$primary-White;
+    @include mixins.bold;
+
+    @include mixins.tablet {
+      text-align: left;
+      padding-right: 80px;
+    } 
+    @include mixins.desktop {
+      text-align: left;
+      padding-right: 80px;
+    } 
+  }
+
+  // thumbnail and input  fields container
   &__container {
     @include mixins.desktop {
       display: flex;
@@ -175,21 +195,5 @@
       padding-bottom: 16px;
 
     }
-  }
-
-  &__label-thumbnail {
-    @include mixins.desktop {
-      flex-basis: 0px;
-      flex-grow: 1;
-      flex-shrink: 0;
-    }
-  }
-
-  &__input-wrapper {
-    @include mixins.desktop {
-      flex-basis: 280px;
-      flex-grow: 1;
-      flex-shrink: 0;
-    }
-  }
+  } 
 }

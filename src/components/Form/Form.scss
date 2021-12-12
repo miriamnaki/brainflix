@@ -11,6 +11,7 @@
       @include mixins.flex(space-between);
       align-items: center;
     }
+
     @include mixins.desktop {
       @include mixins.flex(space-between);
       align-items: center;
@@ -42,17 +43,7 @@
     }
   }
 
-  // form label
-  // &__label {
-  //   @include mixins.bold;
-  //   text-transform: uppercase;
-  //   color: colors.$primary-Silver;
-  //   font-size: 0.75rem; 
-  //   display: block;
-  //   padding-bottom: 0.25rem;
-  // }
-
-  // form description
+  // form description /textarea field
   &__description {
     
     width: 100%;
@@ -62,7 +53,6 @@
     background-color: rgba(246, 246, 246, 0.7);
     padding: 0.5rem 0rem 0rem 0.625rem;
     
-
     &::placeholder { 
       @include mixins.regular;
       width: 100%;
@@ -86,7 +76,7 @@
     } 
   }
 
-  // form text-area
+  // form text-area wrapper
   &__text-area {
     padding: 0rem 0rem 0.5rem 1rem;  
     width: 100%;
@@ -99,7 +89,7 @@
     }
   }
 
-  // form button
+  // form button wrapper
   &__button {
     padding-bottom: 1rem;
 
@@ -110,8 +100,5 @@
     @include mixins.desktop {
       padding-bottom: 0.5rem;    
     }
-  }
-  
-
-  
+  }  
 }

@@ -3,13 +3,14 @@ import './VideoSelected.scss';
 
 
 function VideoSelected(props) {
-  console.log(props)
+ 
+  const {video, image} = props.selectedVideo;
 
+  
   if(!props.selectedVideo) {
     return <p>Loading video</p>
   }
   
-  const {video, image} = props.selectedVideo;
   return (
     <div className="selected-video">
        <div className= "selected-video__container">

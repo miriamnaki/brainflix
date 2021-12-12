@@ -1,27 +1,27 @@
 import {React, Component} from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './VideoUpload.scss'
-import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 import TextArea from '../TextArea/TextArea';
-import Input from '../Input/Input';
 import Button from '../Button/Button';
 import publishIcon from '../../assets/icons/publish.svg'
-import Form from '../Form/Form';
-import { Redirect } from 'react-router';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 class VideoUpload extends Component {
   state ={
     redirect: false
   }
+
+  // funtion to handle form submission
   handleOnSubmit = (e) => {
    e.preventDefault();
    e.target.reset();
-   this.setState({redirect: true})
-   
+   this.setState({redirect: true}) 
  }
   render() {
     const redirectHome = this.state.redirect
+    // After form submition check if state redirect is true,
+    // toast a notification and redirect to home page
     if(redirectHome) {
       toast.success("Form submitted",{
         position: 'top-center',
@@ -31,8 +31,9 @@ class VideoUpload extends Component {
     }
    return (
      <> 
+     {/*upload form */}
      <form  onSubmit={this.handleOnSubmit}className="video-upload">
-     
+    
        <hr className="video-upload__divider"></hr>
        <h1 className="video-upload__title">upload video</h1>
        <hr className="video-upload__divider video-upload__divider--desktop"></hr>
@@ -69,17 +70,17 @@ class VideoUpload extends Component {
        <hr className="video-upload__divider video-upload__divider--desktop"></hr>
  
        <div className="video-upload__button-cancel">
-       <div className="video-upload__button">
-         <Button
-         value= "publish"
-         icon ={publishIcon}
-         
-         
-         />
-       </div>  
-       <p className="video-upload__cancel">cancel</p>
-       </div>
-         
+        <div className="video-upload__button">
+          <Button
+          value= "publish icon"
+          icon ={publishIcon}   
+          />
+        </div>
+         {/* if user cancels, link back to home page */}
+       <Link to="/" className="video-upload__cancel-wrapper">
+          <p className="video-upload__cancel">cancel</p>
+       </Link>
+       </div>        
      </form>
      </>
    );

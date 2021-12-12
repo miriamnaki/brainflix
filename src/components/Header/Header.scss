@@ -20,7 +20,7 @@
     align-items: center;
   }
   
-  // header logo
+  // header logo component
   &__logo {
     align-self: center;
     padding-bottom: 0.875rem;
@@ -38,20 +38,6 @@
     }
   }
 
-  // header input
-  &__input {
-    width: 100%;
-    padding-right: 1rem;
-
-    @include mixins.tablet {
-      padding-right: 0rem;
-    }
-    
-    @include mixins.desktop {
-       padding-right: 0rem;
-    }
-  }
-
   // header input and avatar container
   &__input-avatar-container{
     @include mixins.flex(space-between);
@@ -66,7 +52,22 @@
     }
   }
 
-  // header avatar
+  // header input component
+  &__input {
+    width: 100%;
+    padding-right: 1rem;
+
+    @include mixins.tablet {
+      padding-right: 0rem;
+    }
+    
+    @include mixins.desktop {
+       padding-right: 0rem;
+    }
+  }
+
+  
+  // header avatar component
   &__avatar {
     @include mixins.tablet {
       display: none;
@@ -74,19 +75,6 @@
 
     @include mixins.desktop {
       display: none;
-    }
-  }
-
-  // header avatar for desktop and tablet
-  &__avatar-tablet {
-    display: none;
-
-    @include mixins.tablet {
-      display: inline;
-    }
-
-    @include mixins.desktop {
-      display: inline;
     }
   }
 
@@ -100,6 +88,19 @@
     @include mixins.desktop {  
       padding-left: 2rem; 
       padding-right: 2rem; 
+    }
+  } 
+
+  // header avatar for desktop and tablet
+  &__avatar-tablet {
+    display: none;
+
+    @include mixins.tablet {
+      display: inline;
+    }
+
+    @include mixins.desktop {
+      display: inline;
     }
   } 
 }
