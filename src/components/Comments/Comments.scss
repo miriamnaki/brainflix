@@ -1,0 +1,103 @@
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+
+.video-comments {
+  padding: 0.875rem 1rem 0.875rem 1rem;
+    @include mixins.tablet {
+      padding: 1.5rem 2.25rem;
+    }
+
+    @include mixins.desktop {
+      padding: 2.25rem 0rem;
+    }
+  &__comments {
+    padding: 1rem 0rem 1rem 0rem;
+    
+    @include mixins.tablet {
+      padding: 1.5rem 0rem 1.5rem 0rem;
+      
+    }
+    @include mixins.desktop {
+      padding: 1.5rem 1.5rem 1.5rem 0rem;
+      
+    }
+  }
+
+  // video comments avatar
+  &__avatar {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    border-radius: 50%;
+    background-color: colors.$secondary-Mercury;
+    border: none;
+
+    @include mixins.tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    @include mixins.desktop {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-left: 0.5rem;
+    }
+  }
+
+  // avatar, name , date container
+  &__avatar-name-date-container{
+    @include mixins.flex(space-between);
+    height: 1.5rem;
+
+  }
+
+  // avatar and name container
+  &__avatar-name-container {
+    display: flex;
+  }
+
+  // commenter's name
+  &__name {
+    padding-left: 1rem;
+
+    @include mixins.tablet {
+      padding-left: 1.5rem;
+    }
+    @include mixins.desktop {
+      padding-left: 2.5rem;
+    }
+  }
+
+  // comment description
+  &__description {
+    padding-left: 3.125rem;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    @include mixins.regular;
+
+    @include mixins.tablet {
+      padding-left: 4.0625rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+    @include mixins.desktop {
+      padding-left: 5.4375rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__divider {
+    border: 0.0625rem solid colors.$secondary-Mercury;
+    width: 100%;
+    
+
+    &--tablet-desktop {
+      @include mixins.tablet {
+        display:none
+      }
+      @include mixins.desktop {
+        display:none
+      }
+    }
+  }
+}

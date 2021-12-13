@@ -7,6 +7,7 @@ import axios from 'axios';
 import Loader from "react-loader-spinner";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Comments from '../../Comments/Comments';
 // import videos from '../../../data/videos.json';
 // import videoDetails from '../../../data/video-details.json';
 // import { API_KEY } from './HomePage';
@@ -86,7 +87,6 @@ fetchDetails = (videoId) => {
 
   render(){
     console.log("props", this.props)
-    // Removing selected video from list
     const list = this.state.videoList
     const videolist = this.state.selectedVideo
     console.log("video-list", videolist)
@@ -97,8 +97,9 @@ fetchDetails = (videoId) => {
       height={50}
       width={50}
       timeout={3000} 
-    />
+      />
     }
+    // Removing selected video from list
     const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id)
     
     console.log('list', list)
@@ -108,18 +109,17 @@ fetchDetails = (videoId) => {
          <VideoSelected selectedVideo = {this.state.selectedVideo}/>
       <div className="app">
         <div className="app__video-details">
-           <VideoDetails  
-             selectedVideo = {this.state.selectedVideo}
-            
-           />
+           <VideoDetails selectedVideo = {this.state.selectedVideo}/>
+        </div>
+
+        <div>
+          <Comments selectedVideo = {this.state.selectedVideo}/>
         </div>
 
         <hr className="app__vertical-divider"></hr>
 
         <div className="app__video-list">         
-            <VideoList  
-              videoList={filteredVideos}
-              />
+            <VideoList videoList={filteredVideos}/>
         </div>
       </div>
       </>

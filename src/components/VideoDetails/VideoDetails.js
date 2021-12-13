@@ -3,17 +3,17 @@ import './VideoDetails.scss';
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 import Form from '../Form/Form';
+import Comments from '../Comments/Comments';
 
 const VideoDetails = (props) =>  {
-  console.log(props)
 
   if(!props.selectedVideo){
-    return <p>Loading Videos.....</p>
+    return <p>Loading Video details</p>
   }
+  // props passed from Home Page parent component
+  // destructuring out needed props
   const {title, channel, timestamp,views,likes,description,comments} = props.selectedVideo;
-  // const selectedVideo = props.selectedVideo.match.params.VideoDetails;
-  // console.log(selectedVideo)
- 
+  
   // function to get current date
   function getCurrentDate(timestamp){
     let postedTimestamp  = new Date(timestamp);
@@ -49,8 +49,8 @@ const VideoDetails = (props) =>  {
                 <button className="video__views-button video__icon">
                   <img 
                     src={viewsIcon} 
-                    alt="viewsIcon"/>
-                  </button>
+                    alt="views icon"/>
+                </button>
                 <p className="video__views-count video__tags">{views}</p>
               </div>
 
@@ -59,7 +59,7 @@ const VideoDetails = (props) =>  {
                 <button className="video__likes-button video__icon">
                   <img 
                     src={likesIcon} 
-                    alt="viewsIcon"/>
+                    alt="likes icon"/>
                   </button>
                   {/* number of likes */}
                 <p className="video__likes-count video__tags">{likes}</p>
@@ -77,39 +77,11 @@ const VideoDetails = (props) =>  {
         </div>
 
         {/* comments form */}
-        <Form
-          // label= "join the converstion"
-          // placeholder="Add a new comment"
-          // src="placeholder"
-          // alt= 'avatar'
-        />
+        <Form/>
 
         <hr className= "video__divider"></hr> 
-          {/* video comments */}
-        {comments.map((comment, index) => {
-          <p>{comments.length}</p>   
-           return ( 
-             <>    
-             <div key={timestamp} className="video__comments">
-               <div className="video__comments-avatar-name-date-container">
-                 <div className="video__comments-avatar-name-container">
-                   {/* comments placeholder avatar */}
-                  <div className="video__comments-avatar"></div>
-                  {/* commenter name */}
-                  <p className="video__comments-name video__channel">{comment.name}</p>
-                 </div>
-                 
-                 {/* posted time */}
-                  <p className="video__comments-time video__tags">{getCurrentDate(timestamp)}</p>
-
-               </div>
-              {/* comment */}
-               <p className="video__comments-description">{comment.comment}</p>
-             </div>
-             <hr className="video__divider"></hr>
-             </>
-           )         
-        })}    
+        <Comments/>
+            
      </div>
     </div>
   );

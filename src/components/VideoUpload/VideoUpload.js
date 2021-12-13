@@ -21,7 +21,7 @@ class VideoUpload extends Component {
  }
 
 //  notify on form sucessful form submission
- displayNotifcation() {
+ displayNotification() {
    toast.success("Form submitted", {
      position: 'top-center',
      autoClose: 3000
@@ -29,11 +29,11 @@ class VideoUpload extends Component {
   
  }
   render() {
-    const redirectHome = this.state.redirect
+    const redirectHome = this.state.redirect;
     // After form submition check if state redirect is true,
     // toast a notification and redirect to home page
     if(redirectHome) {
-      this.displayNotifcation()
+      this.displayNotification();
       return <Redirect to='/' />
     }
    return (
