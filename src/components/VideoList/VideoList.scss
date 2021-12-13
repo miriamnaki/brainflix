@@ -26,8 +26,28 @@
       padding-bottom: 1.875rem;
     }
   }
+
+  // video liat item 
+  &__item {
+    text-decoration: none;
+  }
+
+  // video information container
+  &__container {
+    display: flex;
+    padding-bottom: 0.75rem;
+
+    @include mixins.tablet {
+     padding-bottom: 1.5rem;
+     max-width: 43.10%;
+    }
+    @include mixins.desktop {
+     padding-bottom: 1.5rem;
+    
+    }
+  }
   
-  // video image wrapper
+  // video poster image wrapper
   &__image-wrapper {
     width: 6.25rem;
     height: 3.75rem;
@@ -45,7 +65,7 @@
     }
   }
 
-  // video image
+  // video poster image
   &__image {
     width: 6.25rem;
     height: 3.75rem;
@@ -66,23 +86,9 @@
     }  
   }
 
-  // video information container
-  &__container {
-    display: flex;
-    padding-bottom: 0.75rem;
-
-    @include mixins.tablet {
-     padding-bottom: 1.5rem;
-     max-width: 43.10%;
-    }
-    @include mixins.desktop {
-     padding-bottom: 1.5rem;
-    
-    }
-  }
-
   // video title
   &__title {
+    text-decoration: none;
     font-size: 0.8125rem;
     @include mixins.bold;
     padding-bottom: 0.5rem;
@@ -97,6 +103,7 @@
 
   // video channel
   &__channel {
+    text-decoration: none;
     font-size: 0.8125rem;
     @include mixins.regular;
     
