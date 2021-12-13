@@ -3,7 +3,8 @@ import './VideoDetails.scss';
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 import Form from '../Form/Form';
-import Comments from '../Comments/Comments';
+import Comments from '../VideoComments/VideoComments';
+import { v4 as uuidv4 } from 'uuid';
 
 const VideoDetails = (props) =>  {
 
@@ -13,9 +14,9 @@ const VideoDetails = (props) =>  {
   // props passed from Home Page parent component
   // destructuring out needed props
   const {title, channel, timestamp,views,likes,description,comments} = props.selectedVideo;
-  
-  // function to get current date
-  function getCurrentDate(timestamp){
+  // const {getCurrentDate} = props;
+   // function to get current date
+    function getCurrentDate(timestamp){
     let postedTimestamp  = new Date(timestamp);
     let currentDate = postedTimestamp.toLocaleDateString(
       'default',{
@@ -26,9 +27,11 @@ const VideoDetails = (props) =>  {
     );
     return currentDate
   }
+  
+  
 
   return (
-    <div className="video">
+    <div className="video" key={uuidv4()}>
         <div className="video__details-container">
             {/* video title */}
           <h2 className="video__title">{title}</h2>
@@ -80,9 +83,9 @@ const VideoDetails = (props) =>  {
         <Form/>
 
         <hr className= "video__divider"></hr> 
-        <Comments/>
             
      </div>
+        <Comments/>
     </div>
   );
 }

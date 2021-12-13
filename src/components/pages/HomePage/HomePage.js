@@ -1,19 +1,13 @@
-import React from 'react';
+import { Component, React } from 'react';
 import VideoSelected from '../../VideoSelected/VideoSelected';
 import VideoDetails from '../../VideoDetails/VideoDetails';
 import VideoList from '../../VideoList/VideoList';
-import { Component } from 'react';
+import VideoComments from '../../VideoComments/VideoComments';
 import axios from 'axios';
 import Loader from "react-loader-spinner";
-
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Comments from '../../Comments/Comments';
-// import videos from '../../../data/videos.json';
-// import videoDetails from '../../../data/video-details.json';
-// import { API_KEY } from './HomePage';
 export const API_KEY = '9c603683-73d2-4f20-accc-e82961045b5a';
 export const API_URL = 'https://project-2-api.herokuapp.com/videos';
-
 
 const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
 
@@ -24,73 +18,59 @@ class HomePage extends Component{
     selectedVideo: null,  
     videoDetails: [] 
  }
+
  
 // initial video fetch
 componentDidMount(){
-  console.log("These are my props", this.props)
-  // all videos
+  // current video
   const currentVideo = this.props.match.params.videoId
-
-  console.log("current",currentVideo)
   allVideos
   .then((response) => {
-    console.log(response.data)
-  
+    // video list
     let fetchedList = response.data
-   
+
     this.setState({
       videoList: fetchedList,
     })
 
+    // video currently playing
     const mainVideo =  currentVideo ?  currentVideo : response.data[0].id
     this.fetchDetails(mainVideo)
      
   })
 }
 
+// updating the state when new video is selected
 componentDidUpdate(prevProps){
   const currentVideo = this.props.match.params.videoId
   const homeUrl = this.props.match.params.url
-  
-  console.log("prev props", prevProps.match.params.videoId)
-  console.log('After props', currentVideo)
+
   if(prevProps.match.params.videoId !== currentVideo) {
     this.fetchDetails(currentVideo)
-
   }
-  console.log('current video', currentVideo)
-  console.log('url', homeUrl)
-  console.log(this.state)
+
   if(!this.state.selectedVideo || (currentVideo === homeUrl && this.state.selectedVideo.id !== this.state.videoList[0].id)) {
       this.fetchDetails(this.state.videoList[0].id)
   }
  
 }
 
+// function to fetch the details of a currently selected video
 fetchDetails = (videoId) => {
-      axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
-        .then(res => {
-          console.log('Fetched Details',res)
-    
-          const result = res.data
-          console.log('Iam result', result)
-    
-          console.log(result)
-          
-          this.setState({
-          selectedVideo: result,
-          
-        })
-        })     
+  axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
+    .then(res => {
+      const result = res.data    
+      this.setState({
+      selectedVideo: result
+    })
+  })     
 }
 
 
-  render(){
-    console.log("props", this.props)
-    const list = this.state.videoList
-    const videolist = this.state.selectedVideo
-    console.log("video-list", videolist)
+  render(){ 
+    
     if (!this.state.selectedVideo) {
+      // Using the loader library of display spinner when data is being fetched
       return <Loader
       type="ThreeDots"
       color= "blue"
@@ -100,20 +80,25 @@ fetchDetails = (videoId) => {
       />
     }
     // Removing selected video from list
-    const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id)
-    
-    console.log('list', list)
+    const list = this.state.videoList;
+    const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id);
 
     return (
       <>
          <VideoSelected selectedVideo = {this.state.selectedVideo}/>
       <div className="app">
         <div className="app__video-details">
-           <VideoDetails selectedVideo = {this.state.selectedVideo}/>
+          <VideoDetails 
+            selectedVideo = {this.state.selectedVideo}
+            // getCurrentDate={this.getCurrentDate}
+          />
         </div>
 
         <div>
-          <Comments selectedVideo = {this.state.selectedVideo}/>
+          <VideoComments 
+           selectedVideo = {this.state.selectedVideo}
+          //  getCurrentDate={this.getCurrentDate}
+           />
         </div>
 
         <hr className="app__vertical-divider"></hr>
