@@ -6,7 +6,7 @@
 
   // search field
   &__input {
-    color: colors.$primary-BrainFlix-Black;
+    color: colors.$primary-Black;
     @include mixins.bold;
     width: 100%;
     border-radius: 0.25rem;
@@ -29,7 +29,7 @@
 
   // search placeholder
   &::placeholder {
-    color: colors.$primary-BrainFlix-Black;
+    color: colors.$primary-Black;
     margin-left: 2.5rem;
     font-size: 2.5rem;
   }

@@ -137,7 +137,7 @@
       @include mixins.regular;
       width: 100%;
       font-size: 13px;
-      color: colors.$primary-BrainFlix-Black; 
+      color: colors.$primary-Black; 
       
       @include mixins.tablet {
         font-size: 0.875rem;
@@ -171,7 +171,7 @@
     text-align: center;
     text-transform: uppercase;
     font-size: 13px;
-    color: colors.$primary-BrainFlix-Blue;
+    color: colors.$primary-Blue;
     background-color: colors.$primary-White;
     @include mixins.bold;
 

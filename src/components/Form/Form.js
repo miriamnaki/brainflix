@@ -6,9 +6,13 @@ import commentIcon from '../../assets/icons/add_comment.svg';
 import './Form.scss'
 
 function Form() {
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault()
+  }
   return (
     <div className="form">  
-      <form className="form__container">
+      <form onSubmit={handleOnSubmit} className="form__container">
         <div className="form__wrapper"> 
         {/* avatar */}
             <div className="form__avatar"> 

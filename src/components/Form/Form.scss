@@ -2,7 +2,7 @@
 @use '../../styles/partials/colors';
 @use '../../styles/partials/typography';
 .form {
-  color: colors.$primary-BrainFlix-Black;
+  color: colors.$primary-Black;
 
   // form container
   &__container {
@@ -58,7 +58,7 @@
       @include mixins.regular;
       width: 100%;
       font-size: 0.75rem;
-      color: colors.$primary-BrainFlix-Black; 
+      color: colors.$primary-Black; 
       
       @include mixins.tablet {
         font-size: 0.875rem;
