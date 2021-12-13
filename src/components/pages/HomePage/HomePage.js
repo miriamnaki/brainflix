@@ -23,7 +23,7 @@ class HomePage extends Component{
 // initial video fetch
 componentDidMount(){
   // current video
-  const currentVideo = this.props.match.params.videoId
+  let currentVideo = this.props.match.params.videoId
   allVideos
   .then((response) => {
     // video list
@@ -38,11 +38,14 @@ componentDidMount(){
     this.fetchDetails(mainVideo)
      
   })
+  .catch(err => {
+    return err
+  })
 }
 
 // updating the state when new video is selected
 componentDidUpdate(prevProps){
-  const currentVideo = this.props.match.params.videoId
+  let currentVideo = this.props.match.params.videoId
   const homeUrl = this.props.match.params.url
 
   if(prevProps.match.params.videoId !== currentVideo) {
@@ -52,18 +55,23 @@ componentDidUpdate(prevProps){
   if(!this.state.selectedVideo || (currentVideo === homeUrl && this.state.selectedVideo.id !== this.state.videoList[0].id)) {
       this.fetchDetails(this.state.videoList[0].id)
   }
+  
  
 }
 
 // function to fetch the details of a currently selected video
 fetchDetails = (videoId) => {
+  
   axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
     .then(res => {
       const result = res.data    
       this.setState({
       selectedVideo: result
     })
-  })     
+  }) 
+  .catch(err => {
+    return err
+  })    
 }
 
 
@@ -90,16 +98,16 @@ fetchDetails = (videoId) => {
         <div className="app__video-details">
           <VideoDetails 
             selectedVideo = {this.state.selectedVideo}
-            // getCurrentDate={this.getCurrentDate}
+           
           />
-        </div>
-
-        <div>
+        <div className="app__video-comments">
           <VideoComments 
            selectedVideo = {this.state.selectedVideo}
-          //  getCurrentDate={this.getCurrentDate}
+          
            />
         </div>
+        </div>
+
 
         <hr className="app__vertical-divider"></hr>
 

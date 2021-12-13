@@ -3,6 +3,7 @@
 @use '../../styles/partials/mixins';
 .video-upload {
   padding: 0px 16px;
+  font-family: "Avenir";
 
   @include mixins.tablet {
     padding: 0px 36px;

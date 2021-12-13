@@ -79,7 +79,7 @@ class VideoUpload extends Component {
        <div className="video-upload__button-cancel">
         <div className="video-upload__button">
           <Button
-          value= "publish icon"
+          value= "publish"
           icon ={publishIcon}   
           />
         </div>
