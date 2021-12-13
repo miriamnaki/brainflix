@@ -108,7 +108,6 @@ fetchDetails = (videoId) => {
         </div>
         </div>
 
-
         <hr className="app__vertical-divider"></hr>
 
         <div className="app__video-list">         
