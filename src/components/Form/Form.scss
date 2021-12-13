@@ -52,6 +52,7 @@
     border: 0.0625rem solid colors.$secondary-Mercury;
     background-color: rgba(246, 246, 246, 0.7);
     padding: 0.5rem 0rem 0rem 0.625rem;
+    resize: none;
     
     &::placeholder { 
       @include mixins.regular;

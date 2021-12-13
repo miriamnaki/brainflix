@@ -20,7 +20,7 @@ class VideoUpload extends Component {
    this.setState({redirect: true}) 
  }
 
-//  notify on form sucessful form submission
+ // notify on form sucessful form submission
  displayNotification() {
    toast.success("Form submitted", {
      position: 'top-center',

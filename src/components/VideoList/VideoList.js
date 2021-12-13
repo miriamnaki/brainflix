@@ -13,29 +13,27 @@ const  VideoList = (props) => {
       {/* iterate over video list to get individual list properties */}
       {videoList.map(video => {
         return ( 
-              <div className="video-list__container" key={video.id}>
+            <Link to={`/videos/${video.id}`} key={video.id} className="video-list__title">
+              <div className="video-list__container">
                 <div className="video-list__image-wrapper">
                   {/* image */}
-                  <Link to={`/videos/${video.id}`}>
                     <img 
                       className="video-list__image" 
                       src={video.image} 
                       alt={video.channel}            
                       />
-                  </Link>
+                 
                 </div>
 
                 <div className="video-list__title-channel-wrapper">
                   {/* title */}
-                  <Link to={`/videos/${video.id}`} className="video-list__title">
                     <p className="video-list__title">{video.title}</p>
-                  </Link>
+                  
                   {/* channel */}
-                  <Link to={`/videos/${video.id}`} className="video-list__channel">
                     <p className="video-list__channel">{video.channel}</p>
-                  </Link>
                 </div>
               </div>     
+            </Link>
           )
       })}    
     </div>
