@@ -91,14 +91,17 @@
 
   // form button wrapper
   &__button {
+    padding-left: 3.125rem;
     padding-bottom: 1rem;
 
     @include mixins.tablet {
-     padding-bottom: 0.5rem;   
+     padding-bottom: 0.5rem;
+     padding-left: 0rem;   
     }
 
     @include mixins.desktop {
-      padding-bottom: 0.5rem;    
+      padding-bottom: 0.5rem;
+      padding-left: 0rem;    
     }
   }  
 }
