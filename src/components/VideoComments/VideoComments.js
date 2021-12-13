@@ -5,6 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 function VideoComments(props) {
 
+  // This conditional prints on the page!i dont understand why!
+  // Please leave me a comment why this is happening
   if(!props.selectedVideo){
     return <p>Loading Comments</p>
   }
