@@ -7,26 +7,33 @@ import TextArea from '../TextArea/TextArea';
 import Button from '../Button/Button';
 import publishIcon from '../../assets/icons/publish.svg'
 
+
 class VideoUpload extends Component {
   state ={
     redirect: false
   }
 
-  // funtion to handle form submission
+  // function to handle form submission
   handleOnSubmit = (e) => {
    e.preventDefault();
    e.target.reset();
    this.setState({redirect: true}) 
+ }
+
+//  notify on form sucessful form submission
+ displayNotifcation() {
+   toast.success("Form submitted", {
+     position: 'top-center',
+     autoClose: 3000
+   })
+  
  }
   render() {
     const redirectHome = this.state.redirect
     // After form submition check if state redirect is true,
     // toast a notification and redirect to home page
     if(redirectHome) {
-      toast.success("Form submitted",{
-        position: 'top-center',
-        autoClose: 5000
-      })
+      this.displayNotifcation()
       return <Redirect to='/' />
     }
    return (
