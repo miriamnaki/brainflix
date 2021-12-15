@@ -48,7 +48,7 @@ componentDidUpdate(prevProps){
   let currentVideo = this.props.match.params.videoId
   const homeUrl = this.props.match.params.url
 
-  if(prevProps.match.params.videoId !== currentVideo) {
+  if(prevProps.match.params.videoId !== currentVideo && currentVideo) {
     this.fetchDetails(currentVideo)
   }
 

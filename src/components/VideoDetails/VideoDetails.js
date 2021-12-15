@@ -3,7 +3,6 @@ import './VideoDetails.scss';
 import viewsIcon from '../../assets/icons/views.svg'
 import likesIcon from '../../assets/icons/likes.svg'
 import Form from '../Form/Form';
-import Comments from '../VideoComments/VideoComments';
 import { v4 as uuidv4 } from 'uuid';
 
 const VideoDetails = (props) =>  {
@@ -85,7 +84,6 @@ const VideoDetails = (props) =>  {
         <hr className= "video__divider"></hr> 
             
      </div>
-        <Comments/>
     </div>
   );
 }
