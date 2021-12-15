@@ -7,9 +7,11 @@ import axios from 'axios';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 export const API_KEY = '9c603683-73d2-4f20-accc-e82961045b5a';
-export const API_URL = 'https://project-2-api.herokuapp.com/videos';
+// export const API_URL = 'https://project-2-api.herokuapp.com/videos';
+export const API_URL = 'http://localhost:8080/videos';
 
-const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
+// const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
+const allVideos = axios.get(`${API_URL}`)
 
 class HomePage extends Component{
  
@@ -62,7 +64,8 @@ componentDidUpdate(prevProps){
 // function to fetch the details of a currently selected video
 fetchDetails = (videoId) => {
   
-  axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
+  // axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
+  axios.get(`${ API_URL}/${videoId}`)
     .then(res => {
       const result = res.data    
       this.setState({
