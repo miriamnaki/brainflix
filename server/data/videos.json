@@ -287,5 +287,18 @@
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": "video time",
     "comments": []
+  },
+  {
+    "id": "60370a11-8527-44b4-b0f7-0302a26f8083",
+    "title": "new video",
+    "description": "it is funny",
+    "channel": "video channel",
+    "image": "http://localhost:8080/Upload-video-preview.jpg",
+    "views": 0,
+    "likes": 0,
+    "duration": "video duration",
+    "video": "https://project-2-api.herokuapp.com/stream",
+    "timestamp": "video time",
+    "comments": []
   }
 ]
