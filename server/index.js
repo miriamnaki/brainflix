@@ -20,6 +20,19 @@ app.get('/videos', (req, res) => {
   res.status(200).json(newVideoData);
 });
 
+// Fetch a detailed video with a specified id
+app.get('/videos/:videoId', (req, res) => {
+  const videoData = readData();
+
+  const videoDetails = videoData.find(video => video.id === req.params.videoId);
+
+  if(!videoDetails) {
+    return res.status(404).json().send('The video you requested does not exist');
+  }
+  res.status(200).json(videoDetails);
+
+})
+
 app.listen(8080, () => {
   console.log('server listening');
 })
