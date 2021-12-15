@@ -1,6 +1,9 @@
 const express = require('express');
 const videoRoutes = require('./routes/videos');
+
 const app = express();
+
+app.use(express.static('./public/images'));
 
 app.use(express.json());
 

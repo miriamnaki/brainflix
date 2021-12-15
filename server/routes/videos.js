@@ -56,11 +56,11 @@ videoRouter.post('/', (req, res) => {
     title: req.body.title,
     description: req.body.description,
     channel: 'video channel',
-    image: 'video image',
-    views: 'video views',
-    likes: 'video likes',
+    image: 'http://localhost:8080/Upload-video-preview.jpg',
+    views: 0,
+    likes: 0,
     duration: 'video duration',
-    video: 'video player',
+    video: 'https://project-2-api.herokuapp.com/stream',
     timestamp: 'video time',
     comments: []
   }
