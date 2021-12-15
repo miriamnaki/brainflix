@@ -85,7 +85,6 @@ const VideoDetails = (props) =>  {
         <hr className= "video__divider"></hr> 
             
      </div>
-        <Comments/>
     </div>
   );
 }
