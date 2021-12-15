@@ -5,19 +5,52 @@ import 'react-toastify/dist/ReactToastify.css';
 import './VideoUpload.scss'
 import TextArea from '../TextArea/TextArea';
 import Button from '../Button/Button';
-import publishIcon from '../../assets/icons/publish.svg'
+import publishIcon from '../../assets/icons/publish.svg';
+import { API_URL } from '../pages/HomePage/HomePage';
+import axios from 'axios';
 
 
 class VideoUpload extends Component {
   state ={
-    redirect: false
+    title:"",
+    description:"",
+    // redirect: false
+  }
+
+  // handle form changes
+  handleChange = (e) => {
+    console.log(e.target.name, e.target.value);
+    this.setState({
+      [e.target.name]: e.target.value,
+    });  
+  }
+
+  // validate data
+  isFormDataValid = () => {
+    const { title, description} = this.state;
+    if(!title || !description) {
+      return false
+    }
   }
 
   // function to handle form submission
   handleOnSubmit = (e) => {
    e.preventDefault();
+    console.log('title', e.target.title.value)
+   if(this.isFormDataValid) {
+      axios.post(`${API_URL}`, {
+        title: e.target.title.value,
+        description: e.target.description.value,
+      })
+      .then(res => {
+        console.log(res)
+
+      })
+   }
+   
+   console.log('form submitted')
    e.target.reset();
-   this.setState({redirect: true}) 
+  //  this.setState({redirect: true}) 
  }
 
  // notify on form sucessful form submission
@@ -58,8 +91,11 @@ class VideoUpload extends Component {
                className= "video-upload__description"
                rows="2"
                cols="20"
+               name="title"
+               value={this.state.title}
                label="title to your video"
                placeholder="Add a title to your video"
+               onChange ={this.handleChange}
              />
            </div>
  
@@ -68,8 +104,11 @@ class VideoUpload extends Component {
                className= "video-upload__description"
                cols="40"
                rows="5"
+               name="description"
+               value={this.state.description}
                label="add a video description"
                placeholder="Add a description to your video"
+               onChange ={this.handleChange}
              />
            </div>
          </div>
