@@ -11,22 +11,23 @@ export const API_KEY = '9c603683-73d2-4f20-accc-e82961045b5a';
 export const API_URL = 'http://localhost:8080/videos';
 
 // const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
-const allVideos = axios.get(`${API_URL}`)
+const getAllVideos = () => axios.get(`${API_URL}`)
 
 class HomePage extends Component{
- 
+   
   state = {
     videoList: [], 
     selectedVideo: null,  
     videoDetails: [] 
- }
+  }
 
- 
 // initial video fetch
 componentDidMount(){
+  console.log('all videos')
+  
   // current video
   let currentVideo = this.props.match.params.videoId
-  allVideos
+  getAllVideos()
   .then((response) => {
     // video list
     let fetchedList = response.data
@@ -38,6 +39,7 @@ componentDidMount(){
     // video currently playing
     const mainVideo =  currentVideo ?  currentVideo : response.data[0].id
     this.fetchDetails(mainVideo)
+    
      
   })
   .catch(err => {
@@ -46,7 +48,7 @@ componentDidMount(){
 }
 
 // updating the state when new video is selected
-componentDidUpdate(prevProps){
+componentDidUpdate(prevProps, prevState){
   let currentVideo = this.props.match.params.videoId
   const homeUrl = this.props.match.params.url
 
@@ -57,8 +59,10 @@ componentDidUpdate(prevProps){
   if(!this.state.selectedVideo || (currentVideo === homeUrl && this.state.selectedVideo.id !== this.state.videoList[0].id)) {
       this.fetchDetails(this.state.videoList[0].id)
   }
-  
- 
+  console.log('----componentDidUpdate----')
+  // allVideos.then(res => {
+    console.log(prevProps.match)
+  // })
 }
 
 // function to fetch the details of a currently selected video
@@ -67,6 +71,7 @@ fetchDetails = (videoId) => {
   // axios.get(`${ API_URL}/${videoId}?api_key=${API_KEY}`)
   axios.get(`${ API_URL}/${videoId}`)
     .then(res => {
+      console.log('fetch details')
       const result = res.data    
       this.setState({
       selectedVideo: result
@@ -79,6 +84,7 @@ fetchDetails = (videoId) => {
 
 
   render(){ 
+    // console.log('These are props', this.props)
     
     if (!this.state.selectedVideo) {
       // Using the loader library of display spinner when data is being fetched
