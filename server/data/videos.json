@@ -276,22 +276,9 @@
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
   },
   {
-    "id": "79d942d1-af18-4f44-b985-1ccf1369d801",
-    "title": "new video 6",
-    "description": "This video is fantastic and funny",
-    "channel": "video channel",
-    "image": "http://localhost:8080/Upload-video-preview.jpg",
-    "views": 0,
-    "likes": 0,
-    "duration": "video duration",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": "video time",
-    "comments": []
-  },
-  {
-    "id": "60370a11-8527-44b4-b0f7-0302a26f8083",
-    "title": "new video",
-    "description": "it is funny",
+    "id": "3a0a6014-6a3e-4400-9c33-a3a3e4cd53f4",
+    "title": "Sound of Day",
+    "description": "Treasures never seem to be found",
     "channel": "video channel",
     "image": "http://localhost:8080/Upload-video-preview.jpg",
     "views": 0,

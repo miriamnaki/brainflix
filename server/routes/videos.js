@@ -52,7 +52,6 @@ videoRouter.post('/', (req, res) => {
   }
 
   const postedVideo = {
-    id: uuid(),
     title: req.body.title,
     description: req.body.description,
     channel: 'video channel',
@@ -62,7 +61,8 @@ videoRouter.post('/', (req, res) => {
     duration: 'video duration',
     video: 'https://project-2-api.herokuapp.com/stream',
     timestamp: 'video time',
-    comments: []
+    comments: [],
+    id: uuid(),
   }
 
   videoData.push(postedVideo);
