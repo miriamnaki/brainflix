@@ -6,8 +6,7 @@ import './VideoUpload.scss'
 import TextArea from '../TextArea/TextArea';
 import Button from '../Button/Button';
 import publishIcon from '../../assets/icons/publish.svg';
-// import { API_URL } from '../pages/HomePage/HomePage';
-import { API_URL } from '../../App';
+import { API_URL } from '../pages/HomePage/HomePage';
 import axios from 'axios';
 
 

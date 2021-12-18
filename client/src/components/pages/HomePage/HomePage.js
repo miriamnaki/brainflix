@@ -6,9 +6,12 @@ import VideoComments from '../../VideoComments/VideoComments';
 import axios from 'axios';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+// import { API_URL } from '../../../App';
 export const API_KEY = '9c603683-73d2-4f20-accc-e82961045b5a';
 // export const API_URL = 'https://project-2-api.herokuapp.com/videos';
-export const API_URL = 'http://localhost:8080/videos';
+// export const API_URL = 'http://localhost:8080/videos';
+export const API_URL = `${process.env.REACT_APP_API_URL}/videos`;
+ console.log('API', API_URL)
 
 // const allVideos = axios.get(`${API_URL}?api_key=${API_KEY}`)
 const getAllVideos = () => axios.get(`${API_URL}`)

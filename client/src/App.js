@@ -9,7 +9,10 @@ import VideoUploadPage from './components/pages/VideoUploadPage/VideoUploadPage'
 // import axios from 'axios';
 // import Loader from "react-loader-spinner";
 // import VideoDetails from './components/VideoDetails/VideoDetails';
-export const API_URL = 'http://localhost:8080/videos';
+// export const API_URL = 'http://localhost:8080/videos';
+// export const API_URL = `${process.env.REACT_APP_API_URL}`;
+// console.log('api', API_URL)
+
 // const allVideos = axios.get(`${API_URL}`)
 
 class App extends Component  {
