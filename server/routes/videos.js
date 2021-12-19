@@ -9,13 +9,16 @@ const readData = () => {
   const videoData = fs.readFileSync('./data/videos.json');
   return JSON.parse(videoData);
 }
-// Fetch a list of videos
-videoRouter.get('/', (req, res) => {
+
+// Fetch a list of videos endpoint
+videoRouter.get('/', (_req, res) => {
   const videoData = readData();
 
   let newVideoData = [...videoData];
 
   newVideoData = newVideoData.map(listVideo => {
+
+    //destructuring out video properties
     const { description, views, likes, video, timestamp,comments, duration, ...restProperties } = listVideo;
     return restProperties;
   });
@@ -38,12 +41,8 @@ videoRouter.get('/:videoId', (req, res) => {
 
 // function to write data to the file
 const writeData = (videoData) => {
-  fs.writeFileSync('./data/videos.json', JSON.stringify(videoData, null, 2));
-  
+  fs.writeFileSync('./data/videos.json', JSON.stringify(videoData, null, 2));  
 }
-
- // getting current time
- const date = new Date();
 
 // function to convert current time to timestamp
 function dateToTimestamp(){
@@ -60,7 +59,7 @@ videoRouter.post('/', (req, res) => {
       return res.status(400).send('The video must include a title and description');
   }
   
-
+  // postig a video
   const postedVideo = {
     title: req.body.title,
     description: req.body.description,
@@ -79,35 +78,35 @@ videoRouter.post('/', (req, res) => {
   videoData.push(postedVideo);
   writeData(videoData);
 
-  res.status(201).json(postedVideo);
-
+  res.status(200).json(postedVideo);
 
 });
 
-// End point to post comments
+// End point to post comments to a video
 videoRouter.post('/:videoId/comments', (req, res) => {
   let videoData = readData();
   const foundVideo = videoData.find(video => video.id === req.params.videoId);
-  console.log(foundVideo)
 
   if(!foundVideo) {
     return res.status(404).send('This video cannot be found');
   }
+
+  // validating posted comment data
+  if(!req.body.comment) {
+    return res.status(400).send('The comment must include a body');
+  }
   
   const updateComments = {
-    // id: uuid(),
     name: 'Anonymous',
     comment: req.body.comment,
     likes: 0,
     timestamp: dateToTimestamp()
   }
+  
   foundVideo.comments.push(updateComments);
   writeData(videoData);
-  console.log('console')
-
   res.status(200).json(foundVideo);
 })
-console.log('hi');
 
 
 module.exports = videoRouter
