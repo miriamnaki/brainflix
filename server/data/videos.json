@@ -276,42 +276,29 @@
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
   },
   {
-    "id": "3a0a6014-6a3e-4400-9c33-a3a3e4cd53f4",
-    "title": "Sound of Day",
-    "description": "Treasures never seem to be found",
+    "title": "my video",
+    "description": "It is a fantastic moment",
     "channel": "video channel",
     "image": "http://localhost:8080/Upload-video-preview.jpg",
     "views": 0,
     "likes": 0,
     "duration": "video duration",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": "video time",
-    "comments": []
+    "timestamp": "12/18/2021",
+    "comments": [],
+    "id": "dd2100a5-4995-4154-9769-2d37694e2d91"
   },
   {
-    "title": "lslls",
-    "description": "sllslsl",
+    "title": "It all comes here",
+    "description": "Sing lound",
     "channel": "video channel",
     "image": "http://localhost:8080/Upload-video-preview.jpg",
     "views": 0,
     "likes": 0,
     "duration": "video duration",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": "video time",
+    "timestamp": "12/18/2021",
     "comments": [],
-    "id": "bcc5bcfe-a2dd-408b-8859-09a5df9976b7"
-  },
-  {
-    "title": "mimi",
-    "description": "here i am",
-    "channel": "video channel",
-    "image": "http://localhost:8080/Upload-video-preview.jpg",
-    "views": 0,
-    "likes": 0,
-    "duration": "video duration",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": "video time",
-    "comments": [],
-    "id": "60e02e92-c700-4609-8c69-f79efdbe15e0"
+    "id": "edeebab6-ed92-4269-a34c-fe2d403a5dce"
   }
 ]

@@ -36,13 +36,27 @@ videoRouter.get('/:videoId', (req, res) => {
 })
 
 
-// Post data to the video API
 // function to write data to the file
 const writeData = (videoData) => {
   fs.writeFileSync('./data/videos.json', JSON.stringify(videoData, null, 2));
   
 }
 
+// function to post time
+const currentDate = () => {
+  const date = new Date();
+  const today = date.toLocaleDateString(
+    'default',{
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        }
+  )
+  return today;
+}
+console.log(currentDate());
+
+// Post data to the video API
 videoRouter.post('/', (req, res) => {
   const videoData = readData();
   
@@ -50,6 +64,7 @@ videoRouter.post('/', (req, res) => {
   if(!req.body.title || !req.body.description ) {
       return res.status(400).send('The video must include a title and description');
   }
+  
 
   const postedVideo = {
     title: req.body.title,
@@ -60,9 +75,10 @@ videoRouter.post('/', (req, res) => {
     likes: 0,
     duration: 'video duration',
     video: 'https://project-2-api.herokuapp.com/stream',
-    timestamp: 'video time',
+    timestamp: currentDate(),
     comments: [],
     id: uuid(),
+    
   }
 
   videoData.push(postedVideo);
