@@ -1,5 +1,5 @@
 import {React, Component} from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './VideoUpload.scss'
@@ -20,7 +20,6 @@ class VideoUpload extends Component {
 
   // handle form changes
   handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });  
@@ -30,16 +29,17 @@ class VideoUpload extends Component {
   isFormDataValid = () => {
     const { title, description} = this.state;
     if(!title || !description) {
-      return false
+      return false;
     }
   }
-  // history = useHistory()
+
   // function to handle form submission
   handleOnSubmit = (e) => {
    e.preventDefault();
     console.log('title', e.target.title.value)
    if(this.isFormDataValid) {
      
+      // axios request to post to videos end point
       axios.post(`${API_URL}`, {
         title: e.target.title.value,
         description: e.target.description.value,
@@ -47,8 +47,10 @@ class VideoUpload extends Component {
       .then(res => {   
         this.setState({redirect: true})    
       })
-    }
-    
+      .catch(err => {
+        return err;
+      })
+    } 
     e.target.reset();
  }
 
@@ -57,7 +59,7 @@ class VideoUpload extends Component {
    toast.success("Form submitted", {
      position: 'top-center',
      autoClose: 3000
-   })
+   });
   
  }
   render() {
@@ -67,9 +69,9 @@ class VideoUpload extends Component {
     // toast a notification and redirect to home page
     if(redirectHome) {
       this.displayNotification();
-      return <Redirect to='/' />
-     
+      return <Redirect to='/' />;   
     }
+
    return (
      <> 
      {/*upload form */}

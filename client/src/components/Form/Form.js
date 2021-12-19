@@ -7,7 +7,6 @@ import { API_URL } from '../pages/HomePage/HomePage';
 import './Form.scss'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 class Form extends Component {
   state ={
@@ -17,7 +16,6 @@ class Form extends Component {
 
   // handle form change
   handleChange = (e) => {
-    console.log(e.target.value)
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -25,7 +23,7 @@ class Form extends Component {
   
   // validate form data
  isFormValid = () => {
-   const {comment} = this.state
+   const {comment} = this.state;
 
    if(!comment) {
      return false;
@@ -35,6 +33,7 @@ class Form extends Component {
   // handle form submition
   handleOnSubmit = (e) => {
     e.preventDefault();
+
     const videoId = this.props.selectedVideo.id;
     if(this.isFormValid) {
       // axios post request to comments end point
@@ -43,7 +42,10 @@ class Form extends Component {
       })
       .then(res => {
           alert('Comment submitted') 
-          this.setState({redirect: true})      
+          this.setState({redirect: true});     
+      })
+      .catch(err => {
+        return err;
       })
     }
     e.target.reset();
@@ -51,14 +53,13 @@ class Form extends Component {
   
   render() {   
     const videoId = this.props.selectedVideo.id; 
-    const redirectHome = this.state.redirect;
+    const rerenderComments = this.state.redirect;
     // After form submition check if state redirect is true,
     // toast a notification and redirect to home page
-    if(redirectHome) {
+    if(rerenderComments) {
       return <Redirect to={`/videos/${videoId}`} /> 
     }
-
-    
+ 
     return (
      
       <div className="form">  
@@ -96,7 +97,6 @@ class Form extends Component {
       </div>
     );
   }
-
 }
 
 export default Form;
