@@ -60,8 +60,6 @@ videoRouter.post('/', (req, res) => {
       return res.status(400).send('The video must include a title and description');
   }
   
- 
-
 
   const postedVideo = {
     title: req.body.title,
@@ -98,7 +96,7 @@ videoRouter.post('/:videoId/comments', (req, res) => {
   
   const updateComments = {
     // id: uuid(),
-    name: req.body.name,
+    name: 'Anonymous',
     comment: req.body.comment,
     likes: 0,
     timestamp: dateToTimestamp()

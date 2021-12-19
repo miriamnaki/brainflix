@@ -44,15 +44,8 @@ class VideoUpload extends Component {
         title: e.target.title.value,
         description: e.target.description.value,
       })
-      .then(res => {
-        console.log(res);
-        // axios.get(`${API_URL}`)
-        // .then(res => {})
-         
-        // history.push('/')
-        this.setState({redirect: true}) 
-        console.log('form submitted')
-        
+      .then(res => {   
+        this.setState({redirect: true})    
       })
     }
     

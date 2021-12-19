@@ -87,7 +87,7 @@ fetchDetails = (videoId) => {
 
 
   render(){ 
-    // console.log('These are props', this.props)
+    console.log('These are props', this.props)
     
     if (!this.state.selectedVideo) {
       // Using the loader library of display spinner when data is being fetched
