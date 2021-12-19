@@ -1,6 +1,6 @@
 import React from 'react';
 import './VideoSelected.scss';
-import { API_KEY } from '../pages/HomePage/HomePage';
+import { API_KEY } from '../../pages/HomePage/HomePage';
 
 
 function VideoSelected(props) {

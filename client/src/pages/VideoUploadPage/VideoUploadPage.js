@@ -2,11 +2,11 @@ import {React, Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './VideoUpload.scss'
-import TextArea from '../TextArea/TextArea';
-import Button from '../Button/Button';
+import './VideoUploadPage.scss'
+import TextArea from '../../components/TextArea/TextArea';
+import Button from '../../components/Button/Button';
 import publishIcon from '../../assets/icons/publish.svg';
-import { API_URL } from '../../pages/HomePage/HomePage';
+import { API_URL } from '../HomePage/HomePage';
 import axios from 'axios';
 
 

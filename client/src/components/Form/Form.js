@@ -3,7 +3,7 @@ import Avatar from '../Avatar/Avatar';
 import Button from '../Button/Button';
 import TextArea from '../TextArea/TextArea';
 import commentIcon from '../../assets/icons/add_comment.svg';
-import { API_URL } from '../pages/HomePage/HomePage';
+import { API_URL } from '../../pages/HomePage/HomePage';
 import './Form.scss'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
