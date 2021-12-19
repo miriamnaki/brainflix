@@ -42,29 +42,26 @@ const writeData = (videoData) => {
   
 }
 
-// function to post time
-const currentDate = () => {
-  const date = new Date();
-  const today = date.toLocaleDateString(
-    'default',{
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit'
-        }
-  )
-  return today;
+ // getting current time
+ const date = new Date();
+
+// function to convert current time to timestamp
+function dateToTimestamp(){
+  let timestamp = Date.now();
+  return timestamp;
 }
-console.log(currentDate());
 
 // Post data to the video API
 videoRouter.post('/', (req, res) => {
   const videoData = readData();
   
-  // validating Data
+  // validating posted video data
   if(!req.body.title || !req.body.description ) {
       return res.status(400).send('The video must include a title and description');
   }
   
+ 
+
 
   const postedVideo = {
     title: req.body.title,
@@ -75,7 +72,7 @@ videoRouter.post('/', (req, res) => {
     likes: 0,
     duration: 'video duration',
     video: 'https://project-2-api.herokuapp.com/stream',
-    timestamp: currentDate(),
+    timestamp: dateToTimestamp(),
     comments: [],
     id: uuid(),
     
@@ -88,5 +85,31 @@ videoRouter.post('/', (req, res) => {
 
 
 });
+
+// End point to post comments
+videoRouter.post('/:videoId/comments', (req, res) => {
+  let videoData = readData();
+  const foundVideo = videoData.find(video => video.id === req.params.videoId);
+  console.log(foundVideo)
+
+  if(!foundVideo) {
+    return res.status(404).send('This video cannot be found');
+  }
+  
+  const updateComments = {
+    // id: uuid(),
+    name: req.body.name,
+    comment: req.body.comment,
+    likes: 0,
+    timestamp: dateToTimestamp()
+  }
+  foundVideo.comments.push(updateComments);
+  writeData(videoData);
+  console.log('console')
+
+  res.status(200).json(foundVideo);
+})
+console.log('hi');
+
 
 module.exports = videoRouter
