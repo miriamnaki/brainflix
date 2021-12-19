@@ -41,6 +41,7 @@ class Form extends Component {
         comment: e.target.comment.value,
       })
       .then(res => {
+        // comments cannot post without a refresh of page! Please leave me some feed back about this! Am i missing something?
           alert('Comment submitted') 
           this.setState({redirect: true});     
       })
