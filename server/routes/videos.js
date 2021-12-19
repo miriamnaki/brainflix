@@ -78,7 +78,7 @@ videoRouter.post('/', (req, res) => {
   videoData.push(postedVideo);
   writeData(videoData);
 
-  res.status(200).json(postedVideo);
+  res.status(201).json(postedVideo);
 
 });
 
@@ -97,16 +97,16 @@ videoRouter.post('/:videoId/comments', (req, res) => {
   }
   
   const updateComments = {
+    id: uuid(),
     name: 'Anonymous',
     comment: req.body.comment,
     likes: 0,
     timestamp: dateToTimestamp()
   }
-  
+
   foundVideo.comments.push(updateComments);
   writeData(videoData);
-  res.status(200).json(foundVideo);
+  res.status(201).json(foundVideo);
 })
-
 
 module.exports = videoRouter

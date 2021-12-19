@@ -274,18 +274,5 @@
       }
     ],
     "id": "76ca28c0-7dea-4553-887f-8e5129a80fc3"
-  },
-  {
-    "title": "Why do we have it!",
-    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-    "channel": "video channel",
-    "image": "http://localhost:8080/Upload-video-preview.jpg",
-    "views": 0,
-    "likes": 0,
-    "duration": "video duration",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1639900281312,
-    "comments": [],
-    "id": "b0c078c0-bd98-49dc-9083-d1d19b697fa8"
   }
 ]

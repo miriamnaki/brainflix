@@ -6,12 +6,12 @@ import './VideoUpload.scss'
 import TextArea from '../TextArea/TextArea';
 import Button from '../Button/Button';
 import publishIcon from '../../assets/icons/publish.svg';
-import { API_URL } from '../pages/HomePage/HomePage';
+import { API_URL } from '../../pages/HomePage/HomePage';
 import axios from 'axios';
 
 
 
-class VideoUpload extends Component {
+class VideoUploadPage extends Component {
   state ={
     title:"",
     description:"",
@@ -36,7 +36,6 @@ class VideoUpload extends Component {
   // function to handle form submission
   handleOnSubmit = (e) => {
    e.preventDefault();
-    console.log('title', e.target.title.value)
    if(this.isFormDataValid) {
      
       // axios request to post to videos end point
@@ -139,4 +138,4 @@ class VideoUpload extends Component {
  
 }
 
-export default VideoUpload;
+export default VideoUploadPage;

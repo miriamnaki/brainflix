@@ -13,8 +13,7 @@ function TextArea({label, placeholder, name, cols, rows,className, onChange, val
           id={name}
           cols={cols} 
           rows={rows}
-          onChange={onChange}
-          
+          onChange={onChange}      
           placeholder={placeholder}></textarea>
     </div>
   );

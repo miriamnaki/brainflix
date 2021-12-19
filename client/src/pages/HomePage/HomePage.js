@@ -1,8 +1,8 @@
 import { Component, React } from 'react';
-import VideoSelected from '../../VideoSelected/VideoSelected';
-import VideoDetails from '../../VideoDetails/VideoDetails';
-import VideoList from '../../VideoList/VideoList';
-import VideoComments from '../../VideoComments/VideoComments';
+import VideoSelected from '../../components/VideoSelected/VideoSelected';
+import VideoDetails from '../../components/VideoDetails/VideoDetails';
+import VideoList from '../../components/VideoList/VideoList';
+import VideoComments from '../../components/VideoComments/VideoComments';
 import axios from 'axios';
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
