@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "watch": "nodemon", 
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"  
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm install && npm run build" ,
+    "full-install": "npm install && npm install --prefix client" 
   },
   "keywords": [
     "node"
