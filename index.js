@@ -6,19 +6,19 @@ const path = require('path');
 
 
 // ** MIDDLEWARE ** //
-// const whitelist = ['http://localhost:3000', 'http://localhost:8080', 'https://mybrainflix.herokuapp.com/']
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     console.log("** Origin of request " + origin)
-//     if (whitelist.indexOf(origin) !== -1 || !origin) {
-//       console.log("Origin acceptable")
-//       callback(null, true)
-//     } else {
-//       console.log("Origin rejected")
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
+const whitelist = ['http://localhost:3001', 'http://localhost:8080', 'https://mybrainflix.herokuapp.com/']
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable")
+      callback(null, true)
+    } else {
+      console.log("Origin rejected")
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
 
 // make .env files availabe
 require('dotenv').config();
@@ -27,18 +27,18 @@ require('dotenv').config();
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-// app.use(cors(corsOptions))
+app.use(cors(corsOptions))
 
 // allow requests from client
-// app.use(cors({
-//   origin: process.env.CLIENT_URL
-// }));
+app.use(cors({
+  origin: process.env.CLIENT_URL
+}));
 // const cors=require("cors");
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
+// const corsOptions ={
+//    origin:'*', 
+//    credentials:true,            //access-control-allow-credentials:true
+//    optionSuccessStatus:200,
+// }
 
 app.use(cors(corsOptions))
 
