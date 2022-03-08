@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require("cors");
 const videoRoutes = require('./routes/videos');
 const path = require('path');
+// const pp = require('./client/public/in')
 
 
 // ** MIDDLEWARE ** //
@@ -43,10 +44,10 @@ app.use(cors(corsOptions))
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, './client/build')));
 // Handle React routing, return all requests to React app
   app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, './client/build', './client/public/index.html'));
   });
 }
 
