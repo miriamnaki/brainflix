@@ -1,4 +1,4 @@
-import { Component, React } from 'react';
+import React,{ Component } from 'react';
 import VideoSelected from '../../components/VideoSelected/VideoSelected';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import VideoList from '../../components/VideoList/VideoList';
@@ -86,6 +86,8 @@ fetchDetails = (videoId) => {
     }
     // Removing selected video from list
     const list = this.state.videoList;
+    console.log(list)
+    console.log(this.state.videoList)
     const filteredVideos = list.filter(video => video.id !== this.state.selectedVideo.id);
 
     return (
