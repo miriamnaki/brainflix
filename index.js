@@ -42,14 +42,7 @@ const corsOptions ={
 
 app.use(cors(corsOptions))
 
-if (process.env.NODE_ENV) {
-  // Serve any static files
-  app.use(express.static('app/client/build'));
-// Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.resolve(__dirname, 'app/client/build', 'index.html'));
-  });
-}
+
 
 // serve static images from express server
 app.use(express.static('./public/images'));
@@ -60,6 +53,15 @@ app.use(express.json());
 app.use('/api/videos', videoRoutes);
 
 app.disable('etag');
+
+if (process.env.NODE_ENV) {
+  // Serve any static files
+  app.use(express.static('app/client/build'));
+// Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.resolve(__dirname, 'app/client/build', 'index.html'));
+  });
+}
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
