@@ -58,6 +58,8 @@ app.use(express.json());
 
 app.use('/api/videos', videoRoutes);
 
+app.disable('etag');
+
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 })
