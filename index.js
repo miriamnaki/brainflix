@@ -56,7 +56,7 @@ app.use(express.static('./public/images'));
 // allow posting with req body
 app.use(express.json());
 
-app.use('/videos', videoRoutes);
+app.use('/api/videos', videoRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
