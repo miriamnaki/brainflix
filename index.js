@@ -17,7 +17,6 @@ const corsOptions = {
     }
   }
 }
-app.use(cors(corsOptions))
 
 // make .env files availabe
 require('dotenv').config();
@@ -26,6 +25,7 @@ require('dotenv').config();
 const app = express();
 
 const PORT = process.env.PORT || 5050;
+app.use(cors(corsOptions))
 
 // allow requests from client
 app.use(cors({
