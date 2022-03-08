@@ -15,6 +15,13 @@ app.use(cors({
   origin: process.env.CLIENT_URL
 }));
 
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("build"));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+  });
+}
+
 // serve static images from express server
 app.use(express.static('./public/images'));
 
