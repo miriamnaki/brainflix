@@ -1,0 +1,22 @@
+@use '../../styles/partials/typography';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+
+.selected-video {
+
+  // video container
+  &__container {
+    background-color: colors.$secondary-DarkBlack;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+  }
+  
+  // video player
+  &__player {
+    width: 100%; 
+    height: 100%;
+    position: absolute;
+  }
+}

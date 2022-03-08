@@ -1,0 +1,117 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+@use '../../styles/partials/typography';
+.video-list {
+  font-family: "Avenir";
+  padding: 0rem 1rem 0.875rem 1rem;
+
+  @include mixins.tablet {
+    padding: 0rem 2.25rem 1.5rem 2.25rem;
+  }
+
+  @include mixins.desktop {
+    padding-top: 2.25rem;
+  }
+
+  // header-title
+  &__header {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: colors.$primary-Silver;
+    font-weight: 700;
+    font-style: bold;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+      padding-bottom: 1.875rem;
+    }
+  }
+
+  // video liat item 
+  &__item {
+    text-decoration: none;
+  }
+
+  // video information container
+  &__container {
+    display: flex;
+    padding-bottom: 0.75rem;
+
+    @include mixins.tablet {
+     padding-bottom: 1.5rem;
+     max-width: 43.10%;
+    }
+    @include mixins.desktop {
+     padding-bottom: 1.5rem;
+    
+    }
+  }
+  
+  // video poster image wrapper
+  &__image-wrapper {
+    width: 6.25rem;
+    height: 3.75rem;
+    margin-right: 1rem;
+    background-color: colors.$secondary-Mercury;
+
+    @include mixins.tablet {
+      width: 6.875rem;
+      height: 4.0625rem;
+    }
+    @include mixins.desktop {
+      width: 6.875rem;
+      height: 4.0625rem;
+      margin-right: 1rem;
+    }
+  }
+
+  // video poster image
+  &__image {
+    width: 6.25rem;
+    height: 3.75rem;
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    @include mixins.tablet {
+      width: 6.875rem;
+      height: 4.0625rem;
+    }  
+    @include mixins.desktop {
+      width: 6.875rem;
+      height: 4.0625rem;
+      margin: 0;
+    }  
+  }
+
+  // video title
+  &__title {
+    text-decoration: none;
+    font-size: 0.8125rem;
+    @include mixins.bold;
+    padding-bottom: 0.5rem;
+
+    @include mixins.tablet {
+      font-size: 0.875rem;
+    }
+    @include mixins.desktop {
+      font-size: 0.875rem;
+    }
+  }
+
+  // video channel
+  &__channel {
+    text-decoration: none;
+    font-size: 0.8125rem;
+    @include mixins.regular;
+    
+    @include mixins.tablet {
+      font-size: 0.875rem;
+    }
+    @include mixins.desktop {
+      font-size: 0.875rem;
+    }  
+  } 
+}

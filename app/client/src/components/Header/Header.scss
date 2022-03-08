@@ -1,0 +1,106 @@
+@use '../../styles/partials/mixins';
+.header {
+
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.tablet {
+    padding: 1rem 2.25rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  @include mixins.desktop {
+    margin: auto;
+    width: 80%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  // header logo component
+  &__logo {
+    align-self: center;
+    padding-bottom: 0.875rem;
+
+    @include mixins.tablet {
+      margin-right: auto;
+      padding-bottom: 0;
+      width: 7.5rem;
+    }
+    
+    @include mixins.desktop {
+      margin-right: auto;
+      padding-bottom: 0;
+      width: 7.5rem;
+    }
+  }
+
+  // header input and avatar container
+  &__input-avatar-container{
+    @include mixins.flex(space-between);
+    padding-bottom: 0.875rem;
+
+    @include mixins.tablet {
+      padding: 0;
+    }
+
+    @include mixins.desktop {
+      padding: 0;
+    }
+  }
+
+  // header input component
+  &__input {
+    width: 100%;
+    padding-right: 1rem;
+
+    @include mixins.tablet {
+      padding-right: 0rem;
+    }
+    
+    @include mixins.desktop {
+       padding-right: 0rem;
+    }
+  }
+
+  
+  // header avatar component
+  &__avatar {
+    @include mixins.tablet {
+      display: none;
+    }
+
+    @include mixins.desktop {
+      display: none;
+    }
+  }
+
+  // header button
+  &__button {
+    @include mixins.tablet {
+      padding-left: 2rem; 
+      padding-right: 2rem; 
+    }
+
+    @include mixins.desktop {  
+      padding-left: 2rem; 
+      padding-right: 2rem; 
+    }
+  } 
+
+  // header avatar for desktop and tablet
+  &__avatar-tablet {
+    display: none;
+
+    @include mixins.tablet {
+      display: inline;
+    }
+
+    @include mixins.desktop {
+      display: inline;
+    }
+  } 
+}

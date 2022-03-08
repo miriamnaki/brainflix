@@ -1,0 +1,20 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+@use '../../styles/partials/colors';
+
+.text-area {
+  // form text-area
+  width: 100%;
+
+  // text area label
+  &__label {
+  @include mixins.bold;
+  text-transform: uppercase;
+  color: colors.$primary-Silver;
+  font-size: 0.75rem; 
+  display: block;
+  padding-bottom: 0.25rem;
+
+  }
+  
+}

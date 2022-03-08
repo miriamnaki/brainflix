@@ -1,0 +1,20 @@
+@use '../../styles/partials/mixins';
+.avatar {
+  
+  // avatar image
+  &__image {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include mixins.tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    @include mixins.desktop {
+      width: 2.5rem;
+      height: 2.5rem;
+    }    
+  }
+}

@@ -1,0 +1,108 @@
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/colors';
+@use '../../styles/partials/typography';
+.form {
+  color: colors.$primary-Black;
+
+  // form container
+  &__container {
+    max-width: 100%;
+    @include mixins.tablet {
+      @include mixins.flex(space-between);
+      align-items: center;
+    }
+
+    @include mixins.desktop {
+      @include mixins.flex(space-between);
+      align-items: center;
+      padding-right: 1.5rem;
+    }
+  }
+
+  // avatar and text-area wrapper
+  &__wrapper {
+    display: flex; 
+
+    @include mixins.tablet {
+      flex-basis: 6.25rem;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+    @include mixins.desktop {
+      flex-basis: 6.25rem;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }    
+  }
+
+  // form avatar
+  &__avatar {
+    padding-top: 1.25rem;
+    @include mixins.desktop {
+      padding-left: 0.5rem;
+    }
+  }
+
+  // form description /textarea field
+  &__description {
+    
+    width: 100%;
+    height: 5.9375rem;
+    border-radius: 0.3125rem;
+    border: 0.0625rem solid colors.$secondary-Mercury;
+    background-color: rgba(246, 246, 246, 0.7);
+    padding: 0.5rem 0rem 0rem 0.625rem;
+    resize: none;
+    
+    &::placeholder { 
+      @include mixins.regular;
+      width: 100%;
+      font-size: 0.75rem;
+      color: colors.$primary-Black; 
+      
+      @include mixins.tablet {
+        font-size: 0.875rem;
+      }
+      @include mixins.desktop {
+        font-size: 0.875rem;
+      }
+    }
+
+    // form description tablet desktop
+    @include mixins.tablet {
+      height: 2.5rem;
+    }
+    @include mixins.desktop {
+      height: 2.5rem;
+    } 
+  }
+
+  // form text-area wrapper
+  &__text-area {
+    padding: 0rem 0rem 0.5rem 1rem;  
+    width: 100%;
+
+    @include mixins.tablet {
+      padding: 0rem 1.5rem 1.5rem 1.5rem;    
+    }
+    @include mixins.desktop {
+      padding: 0rem 1.5rem 1.5rem 2.5rem;       
+    }
+  }
+
+  // form button wrapper
+  &__button {
+    padding-left: 3.125rem;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+     padding-bottom: 0.5rem;
+     padding-left: 0rem;   
+    }
+
+    @include mixins.desktop {
+      padding-bottom: 0.5rem;
+      padding-left: 0rem;    
+    }
+  }  
+}

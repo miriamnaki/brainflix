@@ -1,0 +1,200 @@
+@use '../../styles/partials/colors';
+@use '../../styles/partials/mixins';
+
+.video {
+  font-family: "Avenir";
+  
+  // video details container
+  &__details-container {
+    padding: 0.875rem 1rem 0.875rem 1rem;
+
+    @include mixins.tablet {
+      padding: 1.5rem 2.25rem;
+    }
+
+    @include mixins.desktop {
+      padding: 2.25rem 0rem;
+    }
+  }
+  // video title
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;   
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+      font-size: 2.0625rem;
+      padding-bottom: 1rem;
+    }
+    @include mixins.desktop {
+      font-size: 2.0625rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  // video divider
+  &__divider {
+    border: 0.0625rem solid colors.$secondary-Mercury;
+    width: 100%;
+    
+
+    &--tablet-desktop {
+      @include mixins.tablet {
+        display:none
+      }
+      @include mixins.desktop {
+        display:none
+      }
+    }
+  }
+
+  // timestamp and channel wrapper
+  &__channel-time-wrapper { 
+    padding-right: 25%;
+
+    @include mixins.tablet {
+      @include mixins.flex(space-between);
+      padding-right: 0rem;
+    }
+    @include mixins.desktop {
+      @include mixins.flex(space-between);
+      padding-right: 0rem;
+    }
+    
+  }
+
+  &__views-likes-wrapper {
+    @include mixins.tablet {
+      @include mixins.flex(space-between);
+    }
+    @include mixins.desktop {
+      @include mixins.flex(space-between);
+      padding-right: 1.5rem;
+    }
+  }
+
+
+  // channel
+  &__channel {
+    font-size: 0.8125rem;
+    @include mixins.bold;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+      padding-bottom: 0rem;
+      padding-right: 2.5rem;
+      font-size: 0.875rem;
+    }
+    @include mixins.desktop {
+      padding-bottom: 0rem;
+      padding-right: 2.5rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  // elements with similar styling
+  // date,views, likes
+  &__tags {
+    font-size: 0.75rem;
+    color: colors.$primary-Silver;
+    @include mixins.regular;
+
+    @include mixins.tablet {
+      font-size: 0.875rem;
+    }
+    @include mixins.desktop {
+      font-size: 0.875rem;
+    }
+  }
+
+  //likes and views & corresponding icons wrapper
+  &__info-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 1rem 0rem 1rem 0rem;
+
+    @include mixins.tablet {
+      justify-content: space-between;
+      padding: 0rem 0rem 0.5rem 0rem;
+    }
+    @include mixins.desktop {
+      justify-content: space-between;
+      padding: 0rem 0rem 0.5rem 0rem;
+    }
+  }
+
+  // icons
+  &__icon {
+    border: none;
+    background-color: colors.$primary-White;
+    padding-right: 0.5rem;
+    height: 0.625rem;
+  }
+  &__icon > img {
+    height: 0.9375rem;
+  }
+
+  // likes and views & corresponding icons individual container
+  &__number-icon {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+
+    @include mixins.tablet {
+      padding-bottom: 0;
+      
+    }
+    @include mixins.desktop {
+      padding-bottom: 0;
+      
+    }
+
+    &--likes {
+      padding-bottom: 0;
+
+      @include mixins.tablet {
+        padding-left: 2.5rem;
+      }
+      @include mixins.desktop {
+        padding-left: 2.5rem;
+      }
+    }
+  }
+
+  // video description
+  &__description {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    @include mixins.regular;
+    padding: 1rem 0rem 1rem 0rem;
+
+    @include mixins.tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1.5rem 0rem 1.5rem 0rem;
+    }
+    @include mixins.desktop {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      padding: 1.5rem 1.5rem 1.5rem 0rem;
+    }
+  }
+
+
+  // ********** video comments *********
+
+  // video comments number
+  &__comment-number{
+    font-size: 0.8125rem;
+    @include mixins.bold;
+    padding-bottom: 1.5rem;
+
+    @include mixins.tablet {
+      padding-top: 0.5rem;
+    }
+    @include mixins.desktop {
+      padding-top: 0.5rem;
+    }
+  } 
+}

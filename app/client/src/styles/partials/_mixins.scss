@@ -1,0 +1,39 @@
+@use './variables';
+@use './colors';
+
+// ********* mobile media queries *********
+@mixin mobile {
+  @media screen and (max-width: variables.$mobile_breakpoint){
+    @content;
+  }
+}
+
+// ********* tablet media queries *********
+@mixin tablet {
+  @media screen and (min-width: variables.$minimim-tablet_breakpoint) and (max-width: variables.$maximim-tablet_breakpoint){                      
+    @content;
+  }
+}
+
+// ********** desktop media queries ************
+
+@mixin desktop {
+  @media screen and (min-width: variables.$minumum-desktop_breakpoint){
+    @content;
+  }
+}
+
+@mixin flex($justify-content: flex-start) {
+  display: flex;
+  justify-content: $justify-content;
+}
+@mixin bold {
+  font-weight: 700;
+  font-style: bold;
+  font-family: "Avenir";
+}
+@mixin regular {
+  font-weight: 400;
+    font-style: bold;
+    font-family: "Avenir";
+}
