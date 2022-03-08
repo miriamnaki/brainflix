@@ -25,13 +25,21 @@ require('dotenv').config();
 
 const app = express();
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 8080;
 // app.use(cors(corsOptions))
 
 // allow requests from client
-app.use(cors({
-  origin: process.env.CLIENT_URL
-}));
+// app.use(cors({
+//   origin: process.env.CLIENT_URL
+// }));
+// const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
