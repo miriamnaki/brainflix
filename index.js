@@ -1,9 +1,10 @@
 const express = require('express');
 const cors = require("cors");
-const videoRoutes = require('./routes/videos');
+const videoRoutes = require('./server/routes/videos');
 
 // make .env files availabe
 require('dotenv').config();
+
 
 const app = express();
 
