@@ -1,4 +1,4 @@
-import React,{ Component } from 'react';
+import { Component, React } from 'react';
 import VideoSelected from '../../components/VideoSelected/VideoSelected';
 import VideoDetails from '../../components/VideoDetails/VideoDetails';
 import VideoList from '../../components/VideoList/VideoList';
