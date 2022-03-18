@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8080;
 // allow requests from client
 app.use(cors({
   origin: process.env.CLIENT_URL
-  // origin: 'http://localhost:3002'
+  // origin: 'http://localhost:3000'
 }));
 
 // serve static images from express server
