@@ -25,6 +25,6 @@ app.use(express.json());
 
 app.use('/videos', videoRoutes);
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT | PORT, () => {
   console.log(`Server listening on ${PORT}`);
 })
